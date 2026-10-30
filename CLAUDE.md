@@ -3,7 +3,7 @@
 인천신검단초 **이예진** 선생님이 쓰는 교사용 웹앱. 사용자는 교사이며 개발자가 아닙니다.
 말투는 부드러운 권유조. 코드보다 "화면에서 어떻게 되는지"를 먼저 말해 주세요.
 
-- 주소: https://llyj59-dotcom.github.io/trust/globee/ (레포 `llyj59-dotcom/trust`의 `/globee/`)
+- 주소: https://llyj59-dotcom.github.io/globee/ — 이 폴더가 곧 레포 `llyj59-dotcom/globee` (main 루트에서 Pages). 「신뢰를 사다」 레포와는 별개.
 - 단일 `index.html` · 로그인 없음 · 외부 통신 없음 · 체크·입력은 `localStorage` 키 `globee-v1`
 - 색은 **Jincerely**(선생님 블로그 jincerely.tistory.com) 색: 크림 `#FCFBF7` · 짙은 청록 `#102D2D` · 청록 `#0F6F6A` · 민트 `#DDEDEA`. CSS 변수는 옛 이름(`--honey*`)을 그대로 쓰되 값만 청록.
 - 교사용이라 **깔끔하게**. 머리글에 이모지 넣지 않기(탭·카드 아이콘만).
@@ -32,8 +32,8 @@
 ## 아직 안 한 것
 
 - (선택) 꿀벌을 그림 파일로 바꾸고 싶으면 `globee.png` — 지금은 SVG로 충분
-- (끝남 10-30) 배포 — https://llyj59-dotcom.github.io/trust/globee/ (`llyj59-dotcom/trust` 레포 `/globee/index.html`).
-  다시 올릴 땐 README의 배포 순서대로. 로고가 생기면 `globee.png`도 함께.
+- 배포 — 별도 레포 `llyj59-dotcom/globee`. 처음엔 trust 레포 `/globee/`에 올렸다가 10-30에 지웠음(선생님이 따로 두길 원하심).
+  고치면 이 폴더에서 `git add -A && git commit && git push`.
 - 사이트 주소 몇 개는 바뀔 수 있음(Empatico 운영 방식, Drive & Listen 주소). 열어서 확인
 
 ## 출처

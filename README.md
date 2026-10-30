@@ -54,15 +54,12 @@ Claude Code에서 `preview_start`로 "국제교류"를 띄우거나, 폴더에�
 
 ## 배포
 
-주소: **https://llyj59-dotcom.github.io/trust/globee/** (2026-10-30 첫 배포)
+주소: **https://llyj59-dotcom.github.io/globee/** — 별도 레포 `llyj59-dotcom/globee` (GitHub Pages, main 브랜치 루트)
 
-「신뢰를 사다」·「생각 모으기」와 같은 레포(`llyj59-dotcom/trust`)의 `/globee/` 폴더를 씁니다.
-그 레포의 루트 `index.html`과 `Jua-OFL.txt`는 「신뢰를 사다」, `/debate/`는 「생각 모으기」이므로 건드리지 않습니다.
+이 폴더가 그 레포 자체예요. 고친 뒤에는 이 폴더에서:
 
 ```bash
-git clone https://github.com/llyj59-dotcom/trust.git
-cp index.html trust/globee/index.html
-cd trust && git add -A && git commit -m "Globee: ..." && git push
+git add -A && git commit -m "무엇을 고쳤는지" && git push
 ```
 
-올린 뒤 실제 주소를 열어 확인하세요. Pages 반영에 30초~1분 걸립니다. 로고 그림이 생기면 `globee.png`도 같은 폴더에 함께 올립니다.
+올린 뒤 실제 주소를 열어 확인하세요. Pages 반영에 30초~1분 걸립니다.
