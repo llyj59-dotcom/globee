@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "국제교류",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8796", "--directory", "C:/Users/llyj5/Desktop/웹앱/국제교류"],
+      "port": 8796
+    }
+  ]
+}
