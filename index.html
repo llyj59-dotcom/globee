@@ -141,6 +141,11 @@ textarea{min-height:70px;resize:vertical}
 .modal{position:fixed;inset:0;background:rgba(20,24,40,.45);display:none;align-items:flex-end;justify-content:center;z-index:40;padding:0}
 .modal.on{display:flex}
 .modal .in{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:900px;max-height:92vh;overflow:auto;padding:20px 22px 28px}
+#formPreview{border:1px solid var(--line);border-radius:10px;padding:22px 24px;background:#fff;box-shadow:inset 0 0 0 6px var(--soft);font-size:13.5px;line-height:1.7;color:#111;overflow:auto}
+#formPreview .paper p{margin:0 0 8px} #formPreview .ctr{text-align:center} #formPreview .logo-slot{color:#aaa;font-size:11px}
+#formPreview .blank{display:inline-block;border-bottom:1px solid #333;height:1em;vertical-align:bottom} #formPreview .sig{display:inline-block;margin-left:20px;color:#999;font-size:11px}
+#formPreview h4{margin:14px 0 6px;font-size:14px} #formPreview table.ptab{border-collapse:collapse;width:100%;font-size:12.5px} #formPreview table.ptab th,#formPreview table.ptab td{border:1px solid #888;padding:4px 7px;text-align:left;vertical-align:top} #formPreview table.ptab th{background:#f3f3f0;white-space:nowrap}
+#formPreview hr{border:0;border-top:1px dashed #aaa;margin:14px 0} #formPreview ul{margin:4px 0 8px 20px}
 @media (min-width:700px){.modal{align-items:center;padding:20px}.modal .in{border-radius:18px}}
 /* 자료 */
 .links{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
@@ -186,6 +191,7 @@ h3.sec{font-size:14px;font-weight:800;margin:20px 0 8px;color:var(--sub);text-tr
 .cinfo div{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:14px}
 .cinfo div b{display:block;font-size:11.5px;color:var(--sub);font-weight:700;margin-bottom:2px}
 .cinfo .wide{grid-column:1/-1}
+ul.tight{margin:4px 0 0 18px;padding:0;font-size:14px} ul.tight li{margin:2px 0;color:var(--sub)}
 /* 메일 */
 .mailkinds{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
 .out{position:relative}
@@ -258,7 +264,7 @@ const STEPS = [
         '목표는 "영어 실력"보다 "질문하고 답하는 경험"에 두면 아이들도 선생님도 덜 부담스러워요.']},
  {id:'school', when:'2~3달 전', ic:'🏫', t:'학교 안에서 먼저', lead:'관리자·담당 선생님과 먼저 맞춰 두면 나중에 되돌아갈 일이 줄어요.',
   items:[
-   {t:'교감·교장 선생님께 계획 말씀드리기', d:'한 장짜리 계획서면 충분해요.', go:'docs:plan'},
+   {t:'교감·교장 선생님께 계획 말씀드리기', d:'처음엔 한 장짜리 계획서면 충분해요. 파트너가 정해지면 최종 계획서(양식 채우기)로 바꿔요.', go:'docs:plan'},
    {t:'교육청 사업·공문 확인하기', d:'국제교류·세계시민학교·국제공동수업 같은 사업이 있으면 예산과 파트너 연결에 도움이 돼요.', go:'links'},
    {t:'개인정보·정보 담당 선생님과 상의하기', d:'쓸 플랫폼이 학교에서 허용되는지, 동의서 양식이 따로 있는지.', go:'docs:consent'},
    {t:'같은 학년 선생님들과 시기 맞추기', d:'혼자 해도 되지만, 학년이 함께하면 파트너교 쪽도 반이 여럿이라 맞추기 쉬워요.'},
@@ -267,8 +273,9 @@ const STEPS = [
   tips:['공문·결재가 필요한지는 학교마다 달라요. 교무부장 선생님께 "국제교류 수업을 하려는데 결재가 필요한가요?" 한 번만 여쭤 보면 돼요.']},
  {id:'find', when:'2달 전부터', ic:'🔍', t:'파트너교 찾기', lead:'길은 생각보다 여러 갈래예요. 두세 군데에 동시에 문을 두드려도 괜찮아요.',
   items:[
-   {t:'교육청 매칭·국제공동수업 사업 알아보기', d:'인천교육청 세계시민교육·국제교류 담당 부서에 문의. 다른 시도 사업은 참여 조건을 확인해요.', go:'links'},
-   {t:'국제 교사 네트워크에 가입해 둘러보기', d:'iEARN, ePals, PenPal Schools, Global Scholars 등. 가입하고 "파트너 구함" 글을 읽어 보세요.', go:'links'},
+   {t:'인천-해외 학교 간 국제교류 사업에 신청하기', d:'인천교육청(동아시아국제교육원)이 해외 학교를 1:1로 매칭해 줘요. 3월 공문 → 4월 초 마감 → 5월부터 교류. 가장 손이 덜 가는 길이에요.', go:'links'},
+   {t:'British Council Partner Finder에 가입하기', d:'학교장 확인서(영문)를 만들어 올리면 전 세계 학교를 검색해 연락할 수 있어요.', go:'docs:bc_letter'},
+   {t:'Class2Class·iEARN 등 교사 네트워크 둘러보기', d:'프로젝트에 반 단위로 참여하면 저절로 짝이 돼요. 가입하고 "파트너 구함" 글을 읽어 보세요.', go:'links'},
    {t:'개인 네트워크 두드리기', d:'해외 한국학교·한글학교, 아는 선생님의 지인, 교사 SNS 커뮤니티. 의외로 가장 빨라요.'},
    {t:'첫 제안 메일 보내기', d:'메일 틀에서 "첫 제안"을 고르고 프로젝트 이름만 넣으면 돼요.', go:'mail:intro'},
    {t:'답이 오면 조건 맞춰 보기', d:'시차, 학사일정, 학생 나이, 플랫폼부터.', go:'partner'},
@@ -282,7 +289,9 @@ const STEPS = [
    {t:'시차·학사일정 맞춘 큰 일정표 만들기', d:'서로의 방학·시험·행사 주간을 먼저 빼고 남는 주에 교류를 넣어요.', go:'partner'},
    {t:'플랫폼 정하기', d:'둘 다 접속 가능하고, 두 학교 모두에서 허용된 것. 공개 범위는 "링크 있는 사람만".'},
    {t:'역할 나누기', d:'양쪽에서 담당 교사 한 명씩, 연락 수단 하나(이메일+메신저 하나)로 정해요.'},
+   {t:'사전 화상 회의 하기', d:'두 선생님이 30분. 무엇을·언제·어떻게 세 가지를 정하고 나와요.', go:'docs:premeet'},
    {t:'간단한 합의서 주고받기', d:'서명이 꼭 필요하진 않아요. 메일로 "이렇게 하기로 해요"를 서로 확인하는 것으로도 충분해요.', go:'docs:mou'},
+   {t:'최종 교류 계획서 만들기', d:'합의한 내용으로 양식을 채우면 한글 계획서와 영문 요약이 함께 나와요. 결재와 파트너 공유에 써요.', go:'docs:final_plan'},
    {t:'서로의 개인정보·사진 규정 묻기', d:'파트너교에도 동의 규정이 있어요. 얼굴·이름을 어디까지 공개할지 미리 맞춰요.', go:'mail:consent'},
   ],
   tips:['"답장은 보통 며칠 안에 하기"를 정해 두면 서로 기다리다 지치는 일이 없어요.']},
@@ -458,6 +467,81 @@ Date: {date}                              Date: {date}`},
 6. 잘된 점 / 어려웠던 점 / 다음에 바꿀 점
 7. 사진 (동의 범위 안에서, 얼굴 노출 여부 확인함)
 8. 자료 보관·삭제: {보유 기간}까지 보관 후 삭제 예정`},
+ {id:'premeet', ic:'🎥', t:'파트너 선생님과 사전 화상 회의 (요약 + 한·영 대본)', when:'매칭된 뒤, 교류 시작 전', who:'두 교사',
+  m:'30분 회의 흐름, 할 말(영어·우리말), 끝나고 보낼 합의 메모 틀. British Council 「첫 만남 가이드」를 바탕으로.', link:'',
+  tpl:`파트너 선생님과 사전 화상 회의 — 30분
+
+■ 한눈에
+ 전: 날짜·시간을 두 시간대로 적어 달력에 넣기 / 이 회의에서 정할 것 3가지 정하기(무엇을·언제·어떻게) / 아래 순서표 보내 두기
+ 중: 5분 먼저 들어가 연결 확인 / 따뜻하게, 상대 말 끝까지 듣기 / 관심사와 기대를 말하고 묻기 / 일정과 시작·끝 날짜 잡기 / 합의와 다음 할 일 확인
+ 후: 당일에 합의 내용과 다음 회의 일정을 메일로 보내기 / 문제가 생기면 바로 알리기(그게 예의이자 약속)
+
+■ 순서표 (Agenda) — 미리 보내 두면 좋아요
+ 1. 인사와 아이스브레이킹 (5분)   Hi & icebreaker
+ 2. 서로 소개 (5분)               Introduction: 이름, 가르치는 교과, 학교 위치, 학생들(나이·관심사)
+ 3. 관심사와 기대 (10분)          Interests & expectations: 어떤 경험을 함께 만들고 싶은지
+ 4. 합의와 일정 (8분)             Agreements & schedule
+ 5. 마무리 (2분)                  Bye-bye
+
+■ 대본
+1. 인사
+ Hello! Nice to finally meet you. Can you hear me well?
+ (안녕하세요! 드디어 뵙네요. 잘 들리세요?)
+ How is the weather in {도시} today? It is {날씨} here in Incheon.
+ (오늘 {도시} 날씨는 어때요? 인천은 {날씨}예요)
+
+2. 소개
+ I am {이름}, a {학년}th grade homeroom teacher at {학교} in Incheon, Korea. I teach all subjects, and English is {주당 시간} hours a week.
+ (저는 인천 {학교} {학년}학년 담임 {이름}이에요. 전 과목을 가르치고 영어는 주 {n}시간이에요)
+ My students are {나이} years old, {n} of them. They are curious and a little shy at first, but they love games and drawing.
+ (우리 반은 {나이}살 {n}명이에요. 호기심 많고 처음엔 수줍지만 놀이와 그림을 좋아해요)
+ Could you tell me about your class?  (선생님 반은 어떤가요?)
+
+3. 관심사와 기대
+ What would you like your students to get from this exchange?  (이 교류로 학생들이 무엇을 얻었으면 하세요?)
+ We would love to {목표: explore each other's cultures / work on a global issue together / create something together}.
+ (저희는 {서로의 문화 알아보기 / 지구촌 문제 함께 다루기 / 함께 만들기}를 하고 싶어요)
+ Our idea is "{프로젝트}". What do you think? We are happy to change it.
+ (저희 생각은 "{프로젝트}"인데 어떠세요? 바꿔도 괜찮아요)
+ How much time can your class spend on this? We can do about {n} lessons.
+ (반에서 얼마나 시간을 낼 수 있어요? 저희는 {n}차시쯤 가능해요)
+
+4. 합의와 일정
+ Let's decide three things today: what, when, and how.  (오늘 세 가지만 정해요. 무엇을, 언제, 어떻게)
+ Our school year runs {기간}. We are on holiday {방학}. When are your holidays and exams?
+ (저희 학기는 {기간}이고 방학은 {방학}이에요. 그쪽 방학·시험은 언제예요?)
+ For sharing, we usually use Padlet with a private link. Is that allowed at your school?
+ (공유는 보통 비공개 링크 패들렛을 써요. 그쪽 학교에서 괜찮아요?)
+ About student privacy: we use first names only, and photos stay between our two classes. Does that work for you?
+ (학생 개인정보는 이름만 쓰고 사진은 두 학급 안에서만요. 괜찮으세요?)
+ Shall we start on {날짜} and finish by {날짜}, exchanging every two weeks?
+ (격주로 주고받고, {날짜}에 시작해서 {날짜}까지 할까요?)
+ Could we have a live session with the students on {날짜}, {한국 시간} Korea time / {그쪽 시간} your time?
+ (학생들 실시간 만남은 {날짜} 한국 {시간} / 그쪽 {시간}에 할까요?)
+ Who will be our contact? I am the contact on our side, and I reply within three school days.
+ (연락은 누가 할까요? 저희 쪽은 제가 하고, 3일 안에 답장할게요)
+
+5. 마무리
+ Thank you so much. I will email you a summary of what we agreed today.
+ (고맙습니다. 오늘 정한 내용을 메일로 정리해 보낼게요)
+ Let's talk again on {날짜}. Have a nice day!  ({날짜}에 다시 이야기해요. 좋은 하루 보내세요!)
+
+ 못 알아들었을 때: Sorry, could you say that again more slowly? / Could you type it in the chat?
+ (죄송해요, 천천히 한 번 더 말씀해 주실래요? / 채팅으로 적어 주실래요?)
+
+■ 끝나고 보내는 합의 메모 (Meeting notes) — 메일 본문에 붙여 넣기
+ Participants / 참석: {이름} ({학교}, Korea) · {파트너 이름} ({파트너교}, {나라})
+ Contact / 연락: {이메일} · {파트너 이메일}
+ Project / 프로젝트: {프로젝트}
+ Students / 학생: Korea grade {학년} ({n}) · Partner grade {학년} ({n})
+ Platform / 플랫폼: {플랫폼} (private link)
+ Privacy / 개인정보: first names only, photos within the two classes, delete after {날짜}
+ Timeline / 일정: start {날짜} – end {날짜}, exchange every {2} weeks
+ Live session / 실시간: {날짜} {한국 시간} KST / {그쪽 시간}
+ Next meeting / 다음 회의: {날짜} {시간}
+ To do before next time / 다음까지 할 일: Korea — {할 일} · Partner — {할 일}
+
+※ British Council "Quick guide for the first meeting with your partner teacher"(CC BY-NC-SA 4.0)의 전·중·후 틀과 회의 템플릿을 바탕으로 우리말 대본을 붙였어요.`},
  {id:'script', ic:'🎬', t:'화상 만남 진행 대본 (한·영)', when:'실시간 만남 전', who:'담임이 들고 진행',
   m:'25분 흐름과 아이들이 말할 영어 문장. 처음 화상 만남이면 이것만 있어도 돼요.', link:'',
   tpl:`화상 만남 진행 대본 (25분)
@@ -560,22 +644,24 @@ Delete shared materials after / 자료 삭제: {날짜}`},
 /* ---------- 🔗 자료 ----------  n: 주의할 점(없으면 빼도 됨) */
 const SITES = [
  {c:'파트너 찾기 · 국제 교사 네트워크', list:[
+   {t:'British Council Partner Finder', u:'https://www.britishcouncil.org/school-resources/partner/find-partner', d:'영국문화원의 무료 파트너교 데이터베이스. 나라·학생 나이·주제·교과로 검색하고, 검증된 교사에게 연락 요청. 가입할 때 학교장 확인서(영문)를 올려야 해요.', n:'학교장 확인서 양식은 서류함 "양식 채우기"에'},
+   {t:'Class2Class', u:'https://class2class.org', d:'190여 나라 교사 3만여 명이 쓰는 학급 연결·프로젝트 플랫폼. "Class Charter: 어린이 권리", "Build the Change: 어린이 친화 도시" 같은 프로젝트에 반 단위로 참여하면 다른 나라 반과 짝이 돼요.', n:'가입 무료. 프로젝트마다 일정이 있으니 시작 전에 확인'},
    {t:'iEARN', u:'https://iearn.org', d:'세계 교사들이 프로젝트를 올리고 참여 반을 모으는 가장 오래된 네트워크. 한국 담당(iEARN-Korea)도 있어요.', n:'프로젝트 둘러보기는 무료, 일부 활동은 연회비'},
    {t:'ePals', u:'https://www.epals.com', d:'펜팔·프로젝트 파트너 찾기. 학급 프로필을 올리고 조건 맞는 반에 연락.', n:'교사 계정 무료'},
    {t:'PenPal Schools', u:'https://www.penpalschools.com', d:'주제별 온라인 펜팔 프로젝트. 같은 학년끼리 자동 연결, 30~45분 활동 단위.', n:'기본 무료, 학생 수 많으면 유료일 수 있음'},
    {t:'Global Scholars (Global Cities)', u:'https://www.globalcities.org', d:'10~13세 대상 무료 국제 프로젝트 수업(블룸버그 자선재단). 교사 연수 포함, 주 2시간쯤.', n:'도시 단위 참여라 문의(globalscholars@globalcities.org)가 먼저'},
-   {t:'Empatico', u:'https://empatico.org', d:'6~11세 학급 간 화상 만남·공감 활동 자료.', n:'최근 운영 방식이 바뀌었을 수 있어요. 사이트에서 "매칭"이 아직 되는지 확인'},
  ]},
  {c:'인천 · 교육청 · 기관', list:[
+   {t:'인천-해외 학교 간 국제교류 (동아시아국제교육원)', u:'https://www.ice.go.kr', d:'인천교육청이 해외 학교를 1:1로 매칭해 주는 사업. 해마다 3월 공문(참가 희망교 모집) → 4월 초 신청 마감 → 5~12월 교류(3~5차시 권장). 교류 언어는 영어·중국어·한국어(태국·베트남·우즈베키스탄 등 한국어교육 기반 나라). 담당교사 사전 협의회와 결과 보고서(12월) 있음.', n:'2026년 기준 70개교 내외, 학교별 20명 내외. 문의: 동아시아국제교육원 동아시아교육협력과 032-745-0206'},
    {t:'인천광역시교육청', u:'https://www.ice.go.kr', d:'인천형 세계시민교육·인천세계시민학교·국제교류 담당 부서 문의. 공문·사업은 여기서 먼저.', n:'담당 부서명은 해마다 바뀔 수 있어요'},
    {t:'인천시 자매결연도시 현황', u:'https://www.incheon.go.kr/IC040016', d:'인천과 자매결연을 맺은 세계 도시 목록. [6인세01-02] 자매 도시 조사와 파트너교 찾기의 출발점.'},
    {t:'인천시 자매도시 · 우호도시 · 국제기구', u:'https://www.incheon.go.kr/IC040543', d:'자매도시(IC040543), 우호도시(IC040544), 인천 속 국제기구(IC040538) 페이지.'},
    {t:'서울시교육청 국제공동수업', u:'https://ijclass.sen.go.kr', d:'30개국 300여 학교가 참여하는 국제공동수업 플랫폼(METASSEM). 운영 매뉴얼·수업 사례가 참고가 돼요.', n:'서울 학교 중심 사업. 다른 시도 참여 가능 여부는 국제협력팀(intaffairs@sen.go.kr)에 문의'},
-   {t:'유네스코 아시아태평양 국제이해교육원 (APCEIU)', u:'https://www.apceiu.org', d:'세계시민교육 교사 연수·교사 해외 파견(APTE)·수업 자료.'},
+   {t:'유네스코 아시아태평양 국제이해교육원 (APCEIU)', u:'https://www.unescoapceiu.org', d:'세계시민교육 교사 연수·교사 해외 파견(APTE)·수업 자료.'},
    {t:'유네스코학교 네트워크 (유네스코한국위원회)', u:'https://www.unesco.or.kr', d:'유네스코학교로 가입하면 국내외 학교 교류 기회와 자료를 받아요.'},
    {t:'국립국제교육원 (NIIED)', u:'https://www.niied.go.kr', d:'교육부 국제교육교류 사업 안내.'},
    {t:'KOICA 세계시민교육', u:'https://www.koica.go.kr', d:'ODA교육원 세계시민교육 교사 연수·교육 자료.'},
-   {t:'반크 (VANK)', u:'https://www.prkorea.com', d:'사이버 외교사절단. 인천교육청과 협약, 한국 알리기 자료.'},
+   {t:'반크 (VANK)', u:'http://www.prkorea.com', d:'사이버 외교사절단. 인천교육청과 협약, 한국 알리기 자료.'},
  ]},
  {c:'세계시민교육 · IB · 지속가능발전목표', list:[
    {t:'GCED Clearinghouse (유네스코)', u:'https://www.gcedclearinghouse.org', d:'세계시민교육 자료 모음. 한국어 자료도 많아요.'},
@@ -587,11 +673,10 @@ const SITES = [
    {t:'The True Size', u:'https://www.thetruesize.com', d:'나라를 끌어다 겹쳐 보며 실제 크기 비교. 지도의 왜곡을 아이들이 바로 느껴요.'},
    {t:'Google Earth', u:'https://earth.google.com', d:'파트너교 동네·학교를 위에서 내려다보고, 스트리트 뷰로 거리 걷기.'},
    {t:'Radio Garden', u:'https://radio.garden', d:'지구본을 돌려 그 나라 라디오를 바로 듣기. 아침 활동으로 좋아요.'},
-   {t:'Drive & Listen', u:'https://driveandlisten.herokuapp.com', d:'그 나라 도시를 차로 달리는 영상 + 현지 라디오.'},
    {t:'WindowSwap', u:'https://www.window-swap.com', d:'세계 누군가의 창밖 풍경. "이 창문은 어느 나라일까?" 놀이.'},
    {t:'Kids World Travel Guide', u:'https://www.kids-world-travel-guide.com', d:'아이 눈높이의 나라별 정보(영어). 수도·언어·음식·유명한 것.'},
    {t:'National Geographic Kids — Countries', u:'https://kids.nationalgeographic.com/geography/countries', d:'나라별 사진·짧은 글·지도(영어).'},
-   {t:'외교부 국가·지역 정보', u:'https://www.mofa.go.kr', d:'한국어로 된 공식 나라 정보(수도·언어·화폐·시차·공휴일).'},
+   {t:'외교부 국가·지역 정보', u:'https://www.mofa.go.kr/www/nation/m_3458/list.do', d:'한국어로 된 공식 나라 정보(수도·언어·화폐·시차·공휴일).'},
    {t:'Time and Date — 세계 시계', u:'https://www.timeanddate.com/worldclock', d:'지금 그 나라는 몇 시? 해 뜨는 시간까지.'},
  ]},
  {c:'수업 도구', list:[
@@ -1303,6 +1388,100 @@ const FAQ = [
  ['결재·공문이 필요한가요?', '학교마다 달라요. 교무부장이나 교감 선생님께 "국제교류 수업을 하려는데 결재가 필요할까요?" 한 번 여쭤 보는 게 가장 빨라요. 한 장짜리 계획서 틀이 서류함에 있어요.'],
  ['꼭 실시간으로 만나야 하나요?', '아니요. 시차 때문에 못 만나는 나라도 많아요. 영상·글을 주고받는 비동기 교류만으로도 충분히 깊어지고, 실시간은 한 학기에 한 번이면 좋아요.'],
 ];
+
+/* ---------- 양식 채우기: 빈칸을 채우면 문서가 만들어지고, 인쇄(PDF)·Word(.doc)·텍스트로 받습니다.
+   fields: k(저장 이름) · lab(칸 이름) · ph(예시) · type(text/textarea/date) · def(기본값, 없으면 비움)
+   doc(v): 채운 값 v로 문서 HTML을 만드는 함수. 빈 값은 ____ 로 남깁니다. ---------- */
+const FORMS = [
+ {id:'bc_letter', ic:'🏫', t:'학교장 확인서 (영문) — British Council 가입용', when:'Partner Finder 가입 전', who:'교장 서명·직인',
+  m:'British Council Partner Finder에 가입할 때 "학교가 이 교사를 대표로 인정한다"는 영문 확인서를 올려요. 학교명·이름만 채우면 돼요. 다른 플랫폼에도 쓸 수 있어요.',
+  fields:[
+   {k:'schoolEn', lab:'학교 영문 이름', ph:'예: Incheon ○○ Elementary School'},
+   {k:'city', lab:'도시·나라 (영문)', ph:'Incheon, Republic of Korea', def:'Incheon, Republic of Korea'},
+   {k:'date', lab:'날짜 (영문)', ph:'예: 4 March 2026'},
+   {k:'title', lab:'교사 호칭', ph:'Ms. / Mr.', def:'Ms.'},
+   {k:'teacherEn', lab:'교사 영문 이름', ph:'예: Yejin Lee'},
+   {k:'role', lab:'교사 직위 (영문)', ph:'a teacher / the International Exchange Coordinator', def:'a teacher'},
+   {k:'platform', lab:'플랫폼 이름', ph:'British Council Partner Finder platform', def:'British Council Partner Finder platform'},
+   {k:'principalEn', lab:'교장 영문 이름', ph:'예: Taeksoo Lee'},
+   {k:'principalTitle', lab:'교장 직함 (영문)', ph:'Principal', def:'Principal'},
+   {k:'contact', lab:'학교 연락처 (영문, 선택)', ph:'예: Tel. +82-32-000-0000 · email@school.kr'},
+  ],
+  doc(v){ const b=(k,w)=>v[k]?esc(v[k]):`<span class="blank" style="min-width:${w||120}px"></span>`;
+   return `<div class="paper en">
+    <p class="ctr"><b>${b('schoolEn',260)}</b></p>
+    <p class="ctr logo-slot">[학교 로고 자리 — Word로 받아 넣거나 인쇄 뒤 직인으로 대신해요]</p>
+    <p class="ctr"><b>Official Confirmation Letter</b></p>
+    <p>Date: ${b('date',140)}</p>
+    <p>To whom it may concern,</p>
+    <p>This letter confirms that ${b('title',40)} ${b('teacherEn',140)} is currently employed as ${b('role',120)} at ${b('schoolEn',220)}, ${b('city',200)}.</p>
+    <p>${v.title==='Mr.'?'He':'She'} is authorized to represent our school for the purpose of registering on the ${b('platform',240)} and engaging in international school partnership and exchange activities.</p>
+    <p>${b('schoolEn',220)} fully supports ${v.title==='Mr.'?'his':'her'} participation in international collaboration initiatives and related educational programs.</p>
+    <p>Should you require any further information, please do not hesitate to contact us.${v.contact?' '+esc(v.contact):''}</p>
+    <p style="margin-top:28px">Sincerely,</p>
+    <p style="margin-top:34px">${b('principalEn',160)}<span class="sig">(signature / seal)</span><br>${b('principalTitle',100)}<br>${b('schoolEn',220)}<br>${b('city',200)}</p>
+   </div>`; }},
+ {id:'final_plan', ic:'📑', t:'최종 교류 계획서 (한글 + 영문 요약)', when:'사전 화상 회의 뒤', who:'담임 작성 → 결재·파트너 공유',
+  m:'파트너와 합의한 뒤 내부 결재와 교육청 보고에 쓰는 최종 계획서. 영문 요약은 파트너 선생님께 그대로 보내요. 주제 찾기에서 고른 프로젝트와 성취기준이 자동으로 들어가요.',
+  fields:[
+   {k:'year', lab:'학년도', ph:'2026', def:String(new Date().getFullYear())},
+   {k:'school', lab:'우리 학교', ph:'예: 인천○○초등학교'},
+   {k:'grade', lab:'학년·반·인원', ph:'예: 6학년 8반 25명'},
+   {k:'teacher', lab:'담당 교사', ph:'예: 이○○'},
+   {k:'pschool', lab:'파트너교', ph:'예: ○○ Primary School'},
+   {k:'country', lab:'나라·도시', ph:'예: 태국 방콕'},
+   {k:'pgrade', lab:'파트너교 학년·인원', ph:'예: Grade 5, 28명'},
+   {k:'pteacher', lab:'파트너 교사·이메일', ph:'예: Ms. ○○ (email)'},
+   {k:'lang', lab:'교류 언어', ph:'영어', def:'영어'},
+   {k:'form', lab:'교류 형태', ph:'학급형 / 동아리형', def:'학급형'},
+   {k:'method', lab:'교류 방식', ph:'온라인(비동기+실시간 1회)', def:'온라인(비동기 + 실시간 1회)'},
+   {k:'period', lab:'기간', ph:'예: 2026. 5. ~ 7. (총 5차시)'},
+   {k:'platform', lab:'플랫폼', ph:'예: Padlet(비공개 링크), Google Meet', def:'Padlet(비공개 링크), Google Meet'},
+   {k:'project', lab:'프로젝트 제목 (한/영)', ph:'비우면 주제 찾기에서 고른 것', auto:'project'},
+   {k:'goal', lab:'목표', ph:'비우면 고른 프로젝트의 목표', type:'textarea', auto:'goal'},
+   {k:'std', lab:'관련 성취기준', ph:'비우면 고른 프로젝트의 성취기준', type:'textarea', auto:'std'},
+   {k:'sessions', lab:'차시 계획 (한 줄에 한 차시: 차시 | 날짜 | 우리 반 활동 | 파트너교 활동)', ph:'1 | 5. 12. | 학교 소개 영상 올리기 | 소개 영상 올리기\n2 | 5. 26. | 질문 3개 보내기 | 질문 3개 보내기', type:'textarea', auto:'sessions'},
+   {k:'eval', lab:'평가·결과 공유', ph:'예: 성찰 글과 산출물로 평가, 학급 누리집(얼굴 없이)에 공유', type:'textarea', def:'학생 성찰 글과 산출물로 평가. 결과는 학급 누리집과 학교 홈페이지(얼굴 없이)에 공유.'},
+   {k:'safety', lab:'안전·개인정보', ph:'동의서·대안 참여·삭제 시점', type:'textarea', def:'학부모 동의서(개인정보 제공·국외 이전·사진 공개 범위) 배부·회수. 미동의 학생은 얼굴 미노출·별명으로 참여. 이름은 이름·별명만, 사진·영상은 두 학급 안에서만 공유, 종료 후 삭제.'},
+   {k:'budget', lab:'예산 (해당 시)', ph:'예: 우편료 30,000원 / 없음', def:'없음'},
+  ],
+  doc(v){ const b=(k,w)=>v[k]?esc(v[k]).replace(/\n/g,'<br>'):`<span class="blank" style="min-width:${w||120}px"></span>`;
+   const rows = (v.sessions||'').split('\n').map(l=>l.trim()).filter(Boolean).map(l=>{ const c=l.split('|').map(x=>x.trim()); while(c.length<4) c.push(''); return `<tr><td>${esc(c[0])}</td><td>${esc(c[1])}</td><td>${esc(c[2])}</td><td>${esc(c[3])}</td></tr>`; }).join('') || '<tr><td>1</td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td></tr>';
+   const stdRows = (v.std||'').split('\n').map(l=>l.trim()).filter(Boolean).map(l=>`<li>${esc(l)}</li>`).join('') || '<li><span class="blank" style="min-width:300px"></span></li>';
+   const pj = PROJECTS.find(p=>p.id===S.pick);
+   return `<div class="paper">
+    <p class="ctr"><b style="font-size:17px">${b('year',50)}학년도 국제교류 수업 운영 계획서 (최종)</b></p>
+    <p class="ctr">${b('school',160)} · 담당 ${b('teacher',80)}</p>
+    <h4>1. 운영 개요</h4>
+    <table class="ptab">
+     <tr><th>우리 학교</th><td>${b('school')}</td><th>파트너교</th><td>${b('pschool')}</td></tr>
+     <tr><th>학년·인원</th><td>${b('grade')}</td><th>파트너교 학년·인원</th><td>${b('pgrade')}</td></tr>
+     <tr><th>담당 교사</th><td>${b('teacher')}</td><th>파트너 교사</th><td>${b('pteacher')}</td></tr>
+     <tr><th>나라·도시</th><td>${b('country')}</td><th>교류 언어</th><td>${b('lang',60)}</td></tr>
+     <tr><th>교류 형태</th><td>${b('form',80)}</td><th>교류 방식</th><td>${b('method')}</td></tr>
+     <tr><th>기간</th><td>${b('period')}</td><th>플랫폼</th><td>${b('platform')}</td></tr>
+    </table>
+    <h4>2. 프로젝트</h4>
+    <p><b>제목:</b> ${b('project',240)}</p>
+    <p><b>목표:</b> ${b('goal',300)}</p>
+    <p><b>관련 성취기준</b></p><ul>${stdRows}</ul>
+    <h4>3. 차시 계획</h4>
+    <table class="ptab"><tr><th style="width:40px">차시</th><th style="width:90px">일시</th><th>우리 반 활동</th><th>파트너교 활동</th></tr>${rows}</table>
+    <h4>4. 평가·결과 공유</h4><p>${b('eval',300)}</p>
+    <h4>5. 안전·개인정보</h4><p>${b('safety',300)}</p>
+    <h4>6. 예산</h4><p>${b('budget',100)}</p>
+    <hr>
+    <h4>Summary for our partner (English)</h4>
+    <p><b>Project:</b> ${v.project?esc(v.project):(pj?esc(pj.en):'<span class="blank" style="min-width:200px"></span>')}<br>
+       <b>Schools:</b> ${b('school',140)} (Korea) · ${b('pschool',140)} (${b('country',80)})<br>
+       <b>Students:</b> Korea ${b('grade',100)} · Partner ${b('pgrade',100)}<br>
+       <b>Language / Format:</b> ${v.lang==='영어'?'English':b('lang',60)} · ${esc(v.method||'online, asynchronous with one live session')}<br>
+       <b>Period / Platform:</b> ${b('period',120)} · ${b('platform',120)}<br>
+       <b>Goal:</b> ${pj&&!v.goal?('to '+esc(pj.goalEn)):b('goal',240)}<br>
+       <b>Privacy:</b> first names or nicknames only; photos and videos stay within the two classes; materials deleted after the project.<br>
+       <b>Contact:</b> ${b('teacher',80)} (Korea) · ${b('pteacher',120)}</p>
+   </div>`; }},
+];
 /* ===================== 데이터 끝 ===================== */
 
 
@@ -1333,7 +1512,7 @@ function render(){
   after();
 }
 function after(){
-  if(S.tab==='docs' && S._openDoc){ const id=S._openDoc; S._openDoc=''; openDoc(id); }
+  if(S.tab==='docs' && S._openDoc){ const id=S._openDoc; S._openDoc=''; if(FORMS.some(f=>f.id===id)) openForm(id); else openDoc(id); }
   if(S._scrollTo){ const el=document.getElementById('sec-'+S._scrollTo); S._scrollTo=''; if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50); }
 }
 
@@ -1356,9 +1535,8 @@ function viewHome(){
     <ol style="margin:6px 0 0 18px;padding:0;font-size:15px">
       <li>아래 <b>궁금한 것</b>을 한 번 훑어요. (3분)</li>
       <li><b>주제 찾기</b>에서 학년군과 틀을 골라 프로젝트 하나를 정해요. (10분)</li>
-      <li><b>순서</b> 1·2단계를 체크하며 교감·교무부장 선생님께 한마디 해 둬요. (하루)</li>
-      <li><b>메일 틀</b> "첫 제안"에 그 프로젝트가 자동으로 들어가요. 복사해서 보내요. (5분)</li>
-      <li>답이 오면 <b>파트너교</b>로 조건을 맞추고, <b>서류함</b>에서 동의서를 꺼내요. 그 뒤는 순서 탭을 따라가요.</li>
+      <li><b>자료</b>의 파트너 찾기 사이트에 가입하거나, <b>메일 틀</b> "첫 제안"을 복사해 보내요. (British Council은 학교장 확인서가 필요해요 → 서류함에서 작성·인쇄)</li>
+      <li>답이 오면 <b>파트너교</b>로 조건을 맞추고 사전 화상 회의를 해요. <b>서류함</b>에서 동의서와 최종 계획서를 꺼내요. 그 뒤는 순서 탭을 따라가요.</li>
     </ol>
     <div class="mini">
       <b>가장 작게 시작하기 (2주, 2차시)</b>
@@ -1405,7 +1583,7 @@ function viewSteps(){
 function goChip(go){
   const [tab, x] = go.split(':');
   const lab = {docs:'서류함', links:'자료', topic:'주제 찾기', partner:'파트너교', mail:'메일 틀'}[tab] || tab;
-  let sub=''; if(tab==='links' && x==='kids') sub=' · 아이들과 나라 알아보기'; if(tab==='docs'){ const d=DOCS.find(d=>d.id===x); sub=d?' · '+d.t.split(' (')[0]:''; } if(tab==='mail'){ const m=MAIL_KINDS.find(m=>m.id===x); sub=m?' · '+m.t:''; }
+  let sub=''; if(tab==='links' && x==='kids') sub=' · 아이들과 나라 알아보기'; if(tab==='docs'){ const d=DOCS.find(d=>d.id===x)||FORMS.find(f=>f.id===x); sub=d?' · '+d.t.split(' (')[0].split(' — ')[0]:''; } if(tab==='mail'){ const m=MAIL_KINDS.find(m=>m.id===x); sub=m?' · '+m.t:''; }
   return `<button class="go" data-go="${tab}" data-extra="${x||''}">${lab}${esc(sub)} →</button>`;
 }
 
@@ -1417,9 +1595,14 @@ function viewDocs(){
     <div class="acts"><button class="btn sm" data-doc="${d.id}">틀 보기·복사</button>${d.link?`<a class="btn sec sm" href="${esc(d.link)}" target="_blank" rel="noopener">내 완성본 열기</a>`:''}<button class="ghost" data-ready="${d.id}">${S.docReady[d.id]?'✓ 준비됨':'준비됐나요?'}</button></div>
   </div>`).join('');
   return `
+  <section class="card">
+    <h2>양식 채우기 → 인쇄·Word로 받기</h2>
+    <p class="lead">빈칸을 채우면 문서가 바로 만들어져요. 인쇄(PDF로 저장)하거나 Word 파일로 받아 로고·직인을 넣으면 돼요. 입력한 내용은 이 기기에만 남아요.</p>
+    <div class="doclist">${FORMS.map(f=>`<div class="doc"><div class="ic">${f.ic}</div><div class="t">${esc(f.t)}</div><div class="m">🕒 ${esc(f.when)} · ✍️ ${esc(f.who)}</div><div class="m">${esc(f.m)}</div><div class="acts"><button class="btn sm" data-form="${f.id}">작성하기</button></div></div>`).join('')}</div>
+  </section>
   <section class="card tint-peach">
-    <h2>서류함</h2>
-    <p class="lead">국제교류에 필요한 서류의 틀이에요. [틀 보기·복사]로 복사해서 한글이나 구글 문서에 붙여 넣고 { } 자리를 채우면 돼요. 완성본을 드라이브에 올려 두셨으면 코드의 <code>link</code> 칸에 주소를 넣어 두세요.</p>
+    <h2>서류 틀 (복사해서 쓰기)</h2>
+    <p class="lead">[틀 보기·복사]로 복사해서 한글이나 구글 문서에 붙여 넣고 { } 자리를 채우면 돼요. 완성본을 드라이브에 올려 두셨으면 코드의 <code>link</code> 칸에 주소를 넣어 두세요.</p>
     <div class="doclist">${list}</div>
     <div class="tipbox" style="margin-top:14px"><b>꼭 기억할 것</b>
       <ul style="margin:4px 0 0 18px;padding:0">
@@ -1438,6 +1621,31 @@ function openDoc(id){
   $('#modal').classList.add('on');
 }
 function closeModal(){ $('#modal').classList.remove('on'); }
+function formVals(f){ S.forms = S.forms||{}; const v = Object.assign({}, S.forms[f.id]||{}); f.fields.forEach(fd=>{ if(v[fd.k]===undefined && fd.def!==undefined) v[fd.k]=fd.def; });
+  const pj = PROJECTS.find(p=>p.id===S.pick);
+  f.fields.forEach(fd=>{ if(fd.auto && !v[fd.k] && pj){ if(fd.auto==='project') v[fd.k]=pj.t+' ('+pj.en+')'; if(fd.auto==='goal') v[fd.k]=pj.goalKo; if(fd.auto==='std') v[fd.k]=pj.std.map(stdLine).join('\n'); if(fd.auto==='sessions') v[fd.k]=pj.flow.map((x,i)=>`${i+1} |  | ${x[0]} — ${x[1]} | `).join('\n'); } });
+  return v; }
+function openForm(id){
+  const f = FORMS.find(x=>x.id===id); if(!f) return;
+  const v = formVals(f);
+  const inputs = f.fields.map(fd=>`<div${fd.type==='textarea'?' style="grid-column:1/-1"':''}><label class="f">${esc(fd.lab)}</label>${fd.type==='textarea'?`<textarea data-ff="${fd.k}" placeholder="${esc(fd.ph||'')}" style="min-height:${fd.k==='sessions'?110:60}px">${esc(v[fd.k]||'')}</textarea>`:`<input type="text" data-ff="${fd.k}" value="${esc(v[fd.k]||'')}" placeholder="${esc(fd.ph||'')}">`}</div>`).join('');
+  $('#modalIn').innerHTML = `<div class="row between"><h2 style="font-size:18px;font-weight:800">${f.ic} ${esc(f.t)}</h2><button class="ghost" data-close>닫기 ✕</button></div>
+    <p class="hint">${esc(f.m)}</p>
+    <div class="grid2" id="formGrid" data-formid="${f.id}">${inputs}</div>
+    <div class="row" style="margin-top:14px"><button class="btn" data-fprint="${f.id}">인쇄 / PDF로 저장</button><button class="btn sec" data-fword="${f.id}">Word 파일(.doc) 받기</button><button class="btn sec" data-ftext="${f.id}">텍스트 복사</button><button class="ghost" data-fclear="${f.id}">입력 지우기</button></div>
+    <label class="f" style="margin-top:16px">미리보기</label>
+    <div id="formPreview">${f.doc(v)}</div>`;
+  $('#modal').classList.add('on');
+}
+function formHTML(f){ const v=formVals(f); return f.doc(v); }
+const PAPER_CSS = `body{font-family:"Malgun Gothic","맑은 고딕",Pretendard,Arial,sans-serif;color:#111;font-size:12.5pt;line-height:1.7;margin:0;padding:20mm 18mm}
+.paper{max-width:720px;margin:0 auto}.paper p{margin:0 0 10px}.ctr{text-align:center}.logo-slot{color:#999;font-size:10pt}
+.blank{display:inline-block;border-bottom:1px solid #333;height:1em;vertical-align:bottom}.sig{display:inline-block;margin-left:24px;color:#888;font-size:10pt}
+h4{margin:16px 0 6px;font-size:13pt}table.ptab{border-collapse:collapse;width:100%;font-size:11.5pt}table.ptab th,table.ptab td{border:1px solid #666;padding:5px 8px;text-align:left;vertical-align:top}table.ptab th{background:#f0f0f0;font-weight:700;white-space:nowrap}
+hr{border:0;border-top:1px dashed #999;margin:18px 0}ul{margin:4px 0 8px 20px}@media print{body{padding:0}}`;
+function printForm(id){ const f=FORMS.find(x=>x.id===id); const w=window.open('','_blank'); if(!w){ toast('팝업이 막혔어요. 브라우저에서 팝업을 허용해 주세요'); return; } w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${esc(f.t)}</title><style>${PAPER_CSS}</style></head><body>${formHTML(f)}<script>setTimeout(()=>window.print(),300)<\/script></body></html>`); w.document.close(); }
+function wordForm(id){ const f=FORMS.find(x=>x.id===id); const html=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><title>${esc(f.t)}</title><style>${PAPER_CSS} .blank{display:inline-block;width:120px;border-bottom:1px solid #333}</style></head><body>${formHTML(f)}</body></html>`; const blob=new Blob(['\ufeff'+html],{type:'application/msword'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=f.t.replace(/[\\/:*?"<>|]/g,'')+'.doc'; a.click(); toast('Word 파일로 받았어요. 열어서 로고·직인을 넣으세요'); }
+function textForm(id){ const f=FORMS.find(x=>x.id===id); const d=document.createElement('div'); d.innerHTML=formHTML(f).replace(/<br\s*\/?>/g,'\n').replace(/<\/(p|tr|h4|li)>/g,'\n').replace(/<\/t[hd]>/g,'\t').replace(/<span class="blank"[^>]*><\/span>/g,'______'); copy(d.textContent.replace(/\n{3,}/g,'\n\n').trim()); }
 
 /* ---------- 🔗 자료·성취기준 ---------- */
 function viewLinks(){
@@ -1449,7 +1657,7 @@ function viewLinks(){
   return `
   <section class="card tint-sky">
     <h2>자료 모음</h2>
-    <p class="lead">파트너 찾는 곳, 기관, 세계시민·IB 자료, 수업 도구, 행정까지. 주소가 바뀌면 코드의 <code>SITES</code>에서 고쳐 주세요.</p>
+    <p class="lead">파트너 찾는 곳, 기관, 세계시민·IB 자료, 수업 도구, 행정까지. 2026-10-30에 전부 열어 확인했어요. 주소가 바뀌면 코드의 <code>SITES</code>에서 고쳐 주세요.</p>
     ${sites}
   </section>
   <section class="card">
@@ -1582,6 +1790,17 @@ function viewPartner(){
     ${groups}
   </section>
   <section class="card">
+    <h2>사전 화상 회의, 이렇게</h2>
+    <p class="lead">매칭이 되면 학생들보다 먼저 두 선생님이 30분쯤 화상으로 만나요. 이 한 번으로 교류의 절반이 정해져요.</p>
+    <div class="grid2">
+      <div><label class="f">회의 전</label><ul class="tight"><li>날짜·시간을 두 시간대로 적어 달력에</li><li>오늘 정할 것 3가지: 무엇을·언제·어떻게</li><li>순서표를 미리 보내 두기</li></ul></div>
+      <div><label class="f">회의 중 (30분)</label><ul class="tight"><li>인사 5분 → 소개 5분 → 관심사·기대 10분 → 합의·일정 8분 → 마무리 2분</li><li>5분 먼저 들어가 연결 확인</li><li>상대 학교의 방학·시험, 허용 플랫폼, 개인정보 규정 묻기</li></ul></div>
+      <div><label class="f">회의 후</label><ul class="tight"><li>당일에 합의 메모를 메일로</li><li>다음 회의 날짜 정하기</li><li>문제가 생기면 바로 알리기</li></ul></div>
+      <div><label class="f">꼭 정하고 나올 것</label><ul class="tight"><li>프로젝트와 차시 수</li><li>시작·끝 날짜, 주고받는 주기</li><li>플랫폼과 개인정보 규칙</li><li>실시간 만남 날짜(있다면)와 연락 담당</li></ul></div>
+    </div>
+    <div class="row" style="margin-top:12px"><button class="btn sec sm" data-go="docs" data-extra="premeet">한·영 대본과 합의 메모 틀 보기</button></div>
+  </section>
+  <section class="card">
     <h2>파트너교 나라 한눈에</h2>
     <p class="lead">나라를 고르면 수도·언어·화폐·인사말과 시차 표가 나와요. 아이들에게 먼저 보여 주기 좋아요. 서머타임은 반영하지 않았으니 날짜에 따라 1시간 차이가 날 수 있어요.</p>
     <select id="tzsel">${COUNTRIES.map((c,i)=>`<option value="${i}" ${c[0]===ci[0]?'selected':''}>${esc(c[0])} (한국 ${c[1]>=0?'+':''}${c[1]}시간)</option>`).join('')}</select>
@@ -1659,6 +1878,11 @@ document.addEventListener('click', e=>{
   if(b.dataset.go){ go(b.dataset.go, b.dataset.extra); return; }
   if(b.dataset.step){ S.step=b.dataset.step; save(); render(); return; }
   if(b.dataset.doc){ openDoc(b.dataset.doc); return; }
+  if(b.dataset.form){ openForm(b.dataset.form); return; }
+  if(b.dataset.fprint){ printForm(b.dataset.fprint); return; }
+  if(b.dataset.fword){ wordForm(b.dataset.fword); return; }
+  if(b.dataset.ftext){ textForm(b.dataset.ftext); return; }
+  if(b.dataset.fclear){ S.forms=S.forms||{}; S.forms[b.dataset.fclear]={}; save(); openForm(b.dataset.fclear); return; }
   if(b.hasAttribute('data-close')){ closeModal(); return; }
   if(b.dataset.copydoc){ const d=DOCS.find(d=>d.id===b.dataset.copydoc); copy(d.tpl, '복사했어요. 한글이나 문서에 붙여 넣으세요'); return; }
   if(b.dataset.dl){ const d=DOCS.find(d=>d.id===b.dataset.dl); const blob=new Blob(['﻿'+d.tpl],{type:'text/plain;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=d.t.replace(/[\\/:*?"<>|]/g,'')+'.txt'; a.click(); return; }
@@ -1688,6 +1912,7 @@ document.addEventListener('change', e=>{
 });
 document.addEventListener('input', e=>{
   const t=e.target;
+  if(t.dataset.ff){ const id=$('#formGrid').dataset.formid; S.forms=S.forms||{}; S.forms[id]=S.forms[id]||{}; S.forms[id][t.dataset.ff]=t.value; save(); const f=FORMS.find(x=>x.id===id); $('#formPreview').innerHTML=f.doc(formVals(f)); return; }
   if(t.dataset.mf){ S.mail.f[t.dataset.mf]=t.value; save(); const k=MAIL_KINDS.find(m=>m.id===S.mail.kind); $('#mailBody').value=mailFill(S.mail.lang==='ko'?k.ko:k.en); $('#mailSubj').value=mailFill(k.sub); return; }
   if(t.id==='stdq'){ S.stdq=t.value; save(); clearTimeout(t._x); t._x=setTimeout(()=>{ render(); const q=$('#stdq'); if(q){ q.focus(); q.setSelectionRange(q.value.length,q.value.length);} },250); }
 });

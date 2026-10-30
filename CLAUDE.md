@@ -14,7 +14,12 @@
 
 ## 데이터가 있는 곳 (`index.html` 안, "선생님이 고치는 곳" ~ "데이터 끝")
 
-`TABS` → `STEPS`(8단계) → `DOCS`(서류 틀) → `SITES`(링크) → `STD`(성취기준) → `FW`/`PROJECTS`(주제 추천) → `PARTNER`/`COUNTRIES` → `MAIL_KINDS`/`PHRASES` → `SYN`(주제→성취기준 낱말표)
+`TABS` → `STEPS`(8단계) → `DOCS`(서류 틀) → `SITES`(링크) → `STD`(성취기준) → `FW`/`PROJECTS`(주제 추천) → `PARTNER`/`COUNTRIES` → `MAIL_KINDS`/`PHRASES` → `SYN`(주제→성취기준 낱말표) → `FAQ` → `FORMS`(양식 채우기: 학교장 확인서·최종 계획서)
+
+양식(`FORMS`)은 `fields`+`doc(v)`로 되어 있고, `openForm`이 입력칸·미리보기·인쇄(새 창 print)·Word(.doc = HTML을 application/msword로)·텍스트 복사를 붙입니다.
+학교장 확인서 문구는 선생님이 실제로 쓴 영문 확인서(OneDrive `2026 신검단초/06 국제교류/00 공통/British Council 파트너십/`)를 바탕으로 했고, 이름·학교는 비워 둡니다.
+사전 화상 회의 대본(`premeet`)은 같은 폴더의 British Council「Quick guide for the first meeting」(CC BY-NC-SA)을 바탕으로 했습니다.
+사이트 목록은 2026-10-30에 전부 열어 확인함: APCEIU는 unescoapceiu.org, 반크는 http, Empatico·Drive & Listen은 죽어서 뺌, British Council Partner Finder는 britishcouncil.org/school-resources/partner/find-partner.
 
 ## 손대기 전에
 
@@ -34,7 +39,7 @@
 - (선택) 꿀벌을 그림 파일로 바꾸고 싶으면 `globee.png` — 지금은 SVG로 충분
 - 배포 — 별도 레포 `llyj59-dotcom/globee`. 처음엔 trust 레포 `/globee/`에 올렸다가 10-30에 지웠음(선생님이 따로 두길 원하심).
   고치면 이 폴더에서 `git add -A && git commit && git push`.
-- 사이트 주소 몇 개는 바뀔 수 있음(Empatico 운영 방식, Drive & Listen 주소). 열어서 확인
+- 인천-해외 학교 간 국제교류 사업(동아시아국제교육원)은 해마다 3월 공문. 날짜·학교 수가 바뀌면 `SITES`의 그 항목을 고치기
 
 ## 출처
 
