@@ -5,219 +5,426 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Globee — 초등 국제교류 길잡이</title>
 <meta name="description" content="초등 국제교류를 처음부터 끝까지: 순서 안내, 동의서·서류 틀, 자료 모음, 주제 추천, 파트너교 점검, 메일 틀">
+<meta name="theme-color" content="#F4F5F3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox=%220 0 64 64%22 xmlns=%22http://www.w3.org/2000/svg%22 aria-hidden=%22true%22%3E %3Cellipse cx=%2220%22 cy=%2222%22 rx=%2211%22 ry=%227%22 fill=%22%23EAF5F3%22 stroke=%22%23BFDCD7%22 stroke-width=%221.5%22 transform=%22rotate%28-28 20 22%29%22/%3E %3Cellipse cx=%2244%22 cy=%2222%22 rx=%2211%22 ry=%227%22 fill=%22%23EAF5F3%22 stroke=%22%23BFDCD7%22 stroke-width=%221.5%22 transform=%22rotate%2828 44 22%29%22/%3E %3Cpath d=%22M24 16 C21 11 17 10 15 12%22 fill=%22none%22 stroke=%22%235C7A76%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E %3Cpath d=%22M40 16 C43 11 47 10 49 12%22 fill=%22none%22 stroke=%22%235C7A76%22 stroke-width=%222%22 stroke-linecap=%22round%22/%3E %3Ccircle cx=%2215%22 cy=%2211.5%22 r=%222.4%22 fill=%22%23F6B8C1%22/%3E%3Ccircle cx=%2249%22 cy=%2211.5%22 r=%222.4%22 fill=%22%23F6B8C1%22/%3E %3CclipPath id=%22beeBody%22%3E%3Cellipse cx=%2232%22 cy=%2236%22 rx=%2221%22 ry=%2219%22/%3E%3C/clipPath%3E %3Cellipse cx=%2232%22 cy=%2236%22 rx=%2221%22 ry=%2219%22 fill=%22%23FFE59A%22/%3E %3Cg clip-path=%22url%28%23beeBody%29%22%3E%3Crect x=%228%22 y=%2241%22 width=%2248%22 height=%226.5%22 rx=%223%22 fill=%22%23BFDCD7%22/%3E%3Crect x=%228%22 y=%2250%22 width=%2248%22 height=%226%22 rx=%223%22 fill=%22%23BFDCD7%22/%3E%3C/g%3E %3Cellipse cx=%2232%22 cy=%2236%22 rx=%2221%22 ry=%2219%22 fill=%22none%22 stroke=%22%235C7A76%22 stroke-width=%222%22/%3E %3Ccircle cx=%2225%22 cy=%2231%22 r=%223%22 fill=%22%233E5E5A%22/%3E%3Ccircle cx=%2239%22 cy=%2231%22 r=%223%22 fill=%22%233E5E5A%22/%3E %3Ccircle cx=%2226.1%22 cy=%2229.9%22 r=%221%22 fill=%22%23fff%22/%3E%3Ccircle cx=%2240.1%22 cy=%2229.9%22 r=%221%22 fill=%22%23fff%22/%3E %3Cellipse cx=%2220%22 cy=%2236.5%22 rx=%223.2%22 ry=%222%22 fill=%22%23F6B8C1%22/%3E%3Cellipse cx=%2244%22 cy=%2236.5%22 rx=%223.2%22 ry=%222%22 fill=%22%23F6B8C1%22/%3E %3Cpath d=%22M29 36.5 Q32 39 35 36.5%22 fill=%22none%22 stroke=%22%233E5E5A%22 stroke-width=%221.6%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/toss/tossface@v1.6.1/dist/tossface.css">
 <style>
+/* ========== Globee 디자인 시스템 ==========
+   서체 Pretendard · 이모지 Tossface(이모지 자리에만) · 색은 Jincerely 청록
+   바탕은 옅은 회색, 카드는 테두리 없는 흰색, 강조는 청록 한 가지 */
 :root{
-  /* Jincerely 색: 크림 바탕 · 짙은 청록 글자 · 청록 포인트 · 연한 민트 */
-  --bg:#fcfbf7; --card:#fff; --ink:#102d2d; --sub:#5f706d;
-  --line:#e4e9e6; --soft:#f3f6f4;
-  --honey:#2a8c83; --honey-d:#1f6f68; --honey-l:#e3f1ee; --honey-x:#f3f9f7;
-  --p:#2a8c83; --p-d:#1f6f68; --p-l:#ddedea; --mint:#cfe6e1; --mint-d:#8fc4bb;
-  --blue:#1b7671; --blue-l:#ddedea;
-  --green:#2f7d5d; --green-l:#e4f2ea;
-  --rose:#b5485a; --rose-l:#f9e6ea;
-  --r:14px; --sh:0 1px 2px rgba(16,45,45,.04), 0 4px 16px rgba(16,45,45,.04);
+  --bg:#F4F5F3; --card:#FFFFFF;
+  --ink:#16201F; --text:#333D4B; --sub:#6B7684; --mute:#8B95A1; --faint:#B0B8C1;
+  --line:#E5E8E6; --line2:#EEF0EF; --fill:#F2F4F3; --fill2:#F7F8F7; --hover:#E9ECEA;
+  --p:#0F6F6A; --p-d:#0B5A56; --p-l:#E1F0ED; --p-x:#F0F7F5;
+  --honey:#F2B33D; --honey-d:#9A6B00; --honey-l:#FFF4DA;
+  --blue:#2F6FE4; --blue-l:#EAF2FE; --lav:#6A4FD0; --lav-l:#F1EEFC; --rose:#D9485A; --rose-l:#FDEDEF;
+  --r-xl:28px; --r-lg:22px; --r:16px; --r-sm:12px;
+  --pop:0 16px 48px rgba(16,32,31,.16), 0 2px 6px rgba(16,32,31,.06);
+  --lift:0 10px 28px rgba(16,32,31,.07);
+  /* 예전 이름 (코드 안 인라인 스타일용) */
+  --soft:var(--fill); --honey-x:var(--p-x); --mint:var(--p-l);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);
-  font-family:Pretendard,"Apple SD Gothic Neo","맑은 고딕","Malgun Gothic",system-ui,sans-serif;
-  font-size:15.5px;line-height:1.65;word-break:keep-all;overflow-wrap:break-word}
-h1,h2,h3,h4{line-height:1.35;margin:0}
-button{font-family:inherit;font-size:inherit;cursor:pointer;border:0;background:none;color:inherit}
-textarea,input,select{font-family:inherit;font-size:inherit;color:inherit}
-a{color:var(--blue)}
-code{font-family:inherit;background:var(--soft);border-radius:6px;padding:1px 6px;font-size:.92em}
-/* 뼈대: 왼쪽 메뉴 + 본문 */
-.app{display:grid;grid-template-columns:232px 1fr;min-height:100vh}
-.side{position:sticky;top:0;height:100vh;background:#fff;border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:18px}
-.brand{display:flex;align-items:center;gap:10px;padding:0 6px}
-.brand .logo{width:42px;height:42px;border-radius:12px;background:#fff8e1;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 auto}
-.brand .logo .bee{display:block;width:34px;height:34px} .brand .logo .bee svg{width:100%;height:100%;display:block}
+html{scroll-padding-top:24px}
+body{background:var(--bg);color:var(--text);
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:15px;line-height:1.6;letter-spacing:-.01em;word-break:keep-all;overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,p{margin:0}
+button{font-family:inherit;font-size:inherit;letter-spacing:inherit;cursor:pointer;border:0;background:none;color:inherit;padding:0}
+textarea,input,select{font-family:inherit;font-size:inherit;letter-spacing:inherit;color:inherit}
+a{color:var(--p);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:inherit}
+svg{display:block}
+.tf{font-family:Tossface,"Apple Color Emoji","Segoe UI Emoji",sans-serif;font-style:normal;line-height:1}
+:focus-visible{outline:2px solid var(--p);outline-offset:2px;border-radius:8px}
+::selection{background:var(--p-l)}
+
+/* ---------- 뼈대 ---------- */
+.app{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:0;height:100vh;background:#fff;border-right:1px solid var(--line2);padding:22px 14px 18px;display:flex;flex-direction:column;gap:28px}
+.brand{display:flex;align-items:center;gap:11px;padding:2px 10px}
+.brand .logo{width:40px;height:40px;border-radius:13px;background:var(--honey-l);display:grid;place-items:center;overflow:hidden;flex:0 0 auto}
 .brand .logo img{width:100%;height:100%;object-fit:cover;display:none}
 .brand .logo.has img{display:block} .brand .logo.has .bee{display:none}
-.brand b{display:block;font-size:19px;font-weight:800;letter-spacing:-.01em}
-.brand small{display:block;font-size:12px;color:var(--sub);font-weight:600;margin-top:-2px}
+.brand .logo .bee{width:32px;height:32px} .brand .logo .bee svg{width:100%;height:100%}
+.brand b{display:block;font-size:19px;font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1.2}
+.brand small{display:block;font-size:12px;color:var(--mute);font-weight:500;margin-top:1px}
 .tabs{display:flex;flex-direction:column;gap:2px}
-.tab{display:flex;align-items:center;gap:10px;border-radius:10px;padding:9px 12px;font-size:14.5px;font-weight:600;color:var(--sub);text-align:left;transition:.12s;border-left:3px solid transparent}
-.tab:hover{background:var(--soft);color:var(--ink)}
-.tab[aria-selected=true]{background:var(--mint);color:var(--p-d);border-left-color:var(--p)}
-.tab .ic{width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;color:var(--p)} .tab .ic svg{width:18px;height:18px}
-.side-foot{margin-top:auto;padding:0 6px}
-.main{padding:28px 32px 90px;max-width:980px;width:100%}
-@media (max-width:860px){
-  .hero-bee{width:56px;height:56px}
-  .app{display:block}
-  .side{position:sticky;height:auto;flex-direction:row;align-items:center;gap:10px;padding:10px 12px;border-right:0;border-bottom:1px solid var(--line);z-index:5;overflow:hidden}
-  .brand{flex:0 0 auto} .brand small{display:none} .brand b{font-size:17px}
-  .tabs{flex-direction:row;overflow-x:auto;scrollbar-width:none;flex:1}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{flex:0 0 auto;white-space:nowrap;border-left:0;border-radius:999px;padding:7px 12px;font-size:13.5px;border:1px solid var(--line)}
-  .tab[aria-selected=true]{border-color:var(--honey)}
-  .side-foot{display:none}
-  .main{padding:16px 16px 80px}
-}
-/* 카드 */
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;box-shadow:var(--sh);margin-bottom:16px}
-.card h2{font-size:18px;font-weight:800;margin-bottom:4px;letter-spacing:-.01em}
-.card .lead{color:var(--sub);font-size:14px;margin:0 0 14px}
-.card.tint-p,.card.tint-peach,.card.tint-sky,.card.tint-lav,.card.tint-sun{background:#fff}
-.hint{color:var(--sub);font-size:13px;margin:6px 0 0}
-.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tab{display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;font-size:15px;font-weight:500;color:var(--sub);text-align:left;transition:background .15s,color .15s}
+.tab:hover{background:var(--fill2);color:var(--ink)}
+.tab .ic{color:var(--faint);transition:color .15s} .tab .ic svg{width:20px;height:20px}
+.tab[aria-selected=true]{background:var(--p-x);color:var(--p-d);font-weight:700}
+.tab[aria-selected=true] .ic{color:var(--p)}
+.side-foot{margin-top:auto;padding:0 10px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-size:12px;color:var(--mute);line-height:1.5}
+.side-foot .ghost{margin-left:-10px}
+.main{width:100%;max-width:920px;margin:0 auto;padding:52px 48px 96px}
+.foot{margin-top:40px;text-align:center;font-size:12.5px;color:var(--mute)}
+
+/* ---------- 머리말 ---------- */
+.ph{margin:0 0 28px}
+.eb{font-size:13px;font-weight:700;color:var(--p);letter-spacing:0;margin:0 0 8px}
+.ph h1{font-size:30px;line-height:1.28;font-weight:800;letter-spacing:-.035em;color:var(--ink)}
+.ph p:not(.eb){margin-top:10px;font-size:15.5px;color:var(--sub);max-width:640px;line-height:1.65}
+
+/* ---------- 카드 ---------- */
+.card{background:var(--card);border-radius:var(--r-lg);padding:28px;margin-bottom:16px}
+.card h2{font-size:19px;font-weight:700;letter-spacing:-.025em;color:var(--ink);line-height:1.35}
+.card .lead{font-size:14.5px;color:var(--sub);margin:6px 0 20px;line-height:1.65}
+.sec-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 4px}
+.sec-h.out{margin:28px 4px 14px}
+.sec-h.out h2{font-size:19px;font-weight:700;color:var(--ink);letter-spacing:-.025em}
+.count{font-size:13px;font-weight:600;color:var(--mute);font-feature-settings:"tnum"}
+h2 .count{margin-left:6px}
+h3.sub-h{font-size:13.5px;font-weight:700;color:var(--sub);margin:28px 0 10px;letter-spacing:-.005em}
+h3.sub-h:first-child{margin-top:0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .row.between{justify-content:space-between}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--p);color:#fff;
-  border-radius:10px;padding:10px 16px;font-weight:700;font-size:14.5px}
+.meta{font-size:12.5px;color:var(--mute);font-weight:500}
+.muted{color:var(--sub)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.grid2 > .wide{grid-column:1/-1}
+
+/* ---------- 단추 ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:44px;padding:0 18px;border-radius:12px;background:var(--p);color:#fff;font-size:15px;font-weight:600;letter-spacing:-.015em;white-space:nowrap;transition:background .15s,transform .1s,box-shadow .15s;text-decoration:none!important}
 .btn:hover{background:var(--p-d)}
-.btn.sec{background:#fff;color:var(--ink);border:1px solid #cfd0cb}
-.btn.sec:hover{background:var(--soft)}
-.btn.sm{padding:7px 12px;font-size:13.5px;border-radius:9px}
-.btn.peach{background:var(--p);color:#fff} .btn.peach:hover{background:var(--p-d)}
-.ghost{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 11px;font-size:13px;font-weight:600;color:var(--sub)}
-.ghost:hover{background:var(--soft);color:var(--ink)}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 0}
-.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;font-size:13.5px;font-weight:600;color:var(--sub);text-align:left;transition:.12s}
-.chip:hover{border-color:#bfc0ba;color:var(--ink)}
-.chip[aria-pressed=true],.chip.lav[aria-pressed=true],.chip.sky[aria-pressed=true],.chip.sun[aria-pressed=true],.chip.peach[aria-pressed=true]{background:var(--mint);border-color:var(--mint-d);color:var(--p-d)}
-label.f{display:block;font-weight:700;font-size:14px;margin:14px 0 4px;color:var(--ink)}
-label.f:first-child{margin-top:0}
-.fh{font-size:13px;color:var(--sub);margin:-2px 0 6px}
-textarea,input[type=text],input[type=number],select{width:100%;border:1px solid #d6d6d0;border-radius:10px;padding:9px 12px;background:#fff;line-height:1.55}
-textarea:focus,input:focus,select:focus{outline:none;border-color:var(--honey);box-shadow:0 0 0 3px var(--honey-l)}
-textarea{min-height:70px;resize:vertical}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
-@media (max-width:640px){.grid2{grid-template-columns:1fr}}
-.tag{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0;vertical-align:middle}
-.tag.p{background:var(--green-l);color:var(--green)} .tag.lav{background:var(--p-l);color:var(--p)}
-.tag.sky{background:var(--blue-l);color:var(--blue)} .tag.sun{background:var(--honey-l);color:var(--honey-d)}
-.tag.peach{background:var(--rose-l);color:var(--rose)} .tag.gray{background:var(--soft);color:var(--sub)}
-.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--p-d);color:#fff;
-  padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:50}
-.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
-/* 처음 */
-.hero{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-.hero-bee{flex:0 0 auto;width:76px;height:76px;display:block} .hero-bee svg{width:100%;height:100%}
-.hero .big{font-size:26px;font-weight:800;letter-spacing:-.02em}
-.hero .big em{font-style:normal;color:var(--honey-d)}
-.hero p{margin:4px 0 0;color:var(--sub);font-size:14.5px}
-.home{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
-.home button{text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:16px;transition:.12s}
-.home button:hover{border-color:var(--honey);background:var(--honey-x)}
-.home .ic{display:inline-flex;width:36px;height:36px;border-radius:10px;background:var(--honey-l);color:var(--p);align-items:center;justify-content:center;margin-bottom:10px} .home .ic svg{width:20px;height:20px}
-.home .t{font-weight:800;font-size:15.5px;display:block}
-.home .d{font-size:13px;color:var(--sub);margin-top:3px;display:block}
-.prog{display:flex;align-items:center;gap:12px;background:var(--soft);border-radius:12px;padding:12px 14px;margin-top:14px}
-.prog .bar{flex:1;height:8px;border-radius:999px;background:#e2e2dc;overflow:hidden}
-.prog .bar i{display:block;height:100%;background:var(--honey);border-radius:999px;transition:width .3s}
-.prog .tx{font-size:13px;font-weight:700;color:var(--sub);white-space:nowrap}
-/* 순서 */
-.stepnav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-.stepnav button{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px 6px 6px;font-size:13.5px;font-weight:600;color:var(--sub)}
-.stepnav button[aria-selected=true]{border-color:var(--mint-d);background:var(--mint);color:var(--p-d)}
-.stepnav button.done{border-color:#c9e4d6;color:var(--green)}
-.stepnav .n{width:22px;height:22px;border-radius:50%;background:var(--soft);font-size:11.5px;display:inline-flex;align-items:center;justify-content:center;color:var(--sub);font-weight:800}
-.stepnav button[aria-selected=true] .n{background:var(--p);color:#fff}
-.stepnav button.done .n{background:var(--green);color:#fff}
-.ck{display:flex;gap:12px;align-items:flex-start;padding:11px 12px;border:1px solid var(--line);border-radius:12px;margin:8px 0;cursor:pointer;background:#fff;transition:.12s}
-.ck:hover{border-color:#c9c9c3}
-.ck.on{background:var(--honey-x);border-color:var(--mint)}
-.ck input{display:none}
-.ck .box{flex:0 0 auto;width:22px;height:22px;border-radius:7px;border:1.5px solid #c9c9c3;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink);transition:.12s}
-.ck.on .box{background:var(--p);border-color:var(--p);color:#fff}
-.ck .t{font-weight:700;font-size:14.5px;display:block}
-.ck.on .t{color:var(--sub);text-decoration:line-through;text-decoration-color:#c9c9c3}
-.ck .d{font-size:13.5px;color:var(--sub);margin-top:2px}
-.ck .go{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);background:var(--blue-l);border-radius:999px;padding:1px 9px;margin-top:5px;margin-right:4px}
-.tipbox{background:var(--honey-x);border:1px solid #cfe3de;border-radius:12px;padding:12px 14px;font-size:13.5px;margin-top:14px}
-.tipbox b{color:var(--honey-d)}
-.tipbox li{margin:3px 0}
-/* 서류 */
-.doclist{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
-.doc{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:5px}
-.doc .ic{font-size:22px}
-.doc .t{font-weight:800;font-size:15px}
-.doc .m{font-size:13px;color:var(--sub)}
-.doc .acts{margin-top:auto;display:flex;gap:6px;flex-wrap:wrap;padding-top:8px}
-.doc.ready{border-color:#c9e4d6;background:#f8fcfa}
-.pre{white-space:pre-wrap;background:var(--soft);border-radius:10px;padding:14px;font-size:13.5px;line-height:1.6;max-height:420px;overflow:auto;border:1px solid var(--line)}
-.modal{position:fixed;inset:0;background:rgba(20,24,40,.45);display:none;align-items:flex-end;justify-content:center;z-index:40;padding:0}
-.modal.on{display:flex}
-.modal .in{background:#fff;border-radius:18px 18px 0 0;width:100%;max-width:900px;max-height:92vh;overflow:auto;padding:20px 22px 28px}
-#formPreview{border:1px solid var(--line);border-radius:10px;padding:22px 24px;background:#fff;box-shadow:inset 0 0 0 6px var(--soft);font-size:13.5px;line-height:1.7;color:#111;overflow:auto}
-#formPreview .paper p{margin:0 0 8px} #formPreview .ctr{text-align:center} #formPreview .logo-slot{color:#aaa;font-size:11px}
-#formPreview .blank{display:inline-block;border-bottom:1px solid #333;height:1em;vertical-align:bottom} #formPreview .sig{display:inline-block;margin-left:20px;color:#999;font-size:11px}
-#formPreview h4{margin:14px 0 6px;font-size:14px} #formPreview table.ptab{border-collapse:collapse;width:100%;font-size:12.5px} #formPreview table.ptab th,#formPreview table.ptab td{border:1px solid #888;padding:4px 7px;text-align:left;vertical-align:top} #formPreview table.ptab th{background:#f3f3f0;white-space:nowrap}
-#formPreview hr{border:0;border-top:1px dashed #aaa;margin:14px 0} #formPreview ul{margin:4px 0 8px 20px}
-@media (min-width:700px){.modal{align-items:center;padding:20px}.modal .in{border-radius:18px}}
-/* 자료 */
-.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
-.lk{display:block;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;text-decoration:none;color:inherit;transition:.12s}
-.lk:hover{border-color:var(--honey);background:var(--honey-x)}
-.lk .t{font-weight:800;font-size:14.5px;color:var(--ink)}
-.lk .d{font-size:13px;color:var(--sub);margin-top:2px}
-.lk .n{font-size:12.5px;color:var(--honey-d);margin-top:4px}
-h3.sec{font-size:14px;font-weight:800;margin:20px 0 8px;color:var(--sub);text-transform:uppercase;letter-spacing:.02em}
-.stdrow{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line);font-size:14px}
-.stdrow:first-child{border-top:0}
-.stdrow code{flex:0 0 auto;font-weight:800;color:var(--p);background:var(--p-l);border-radius:6px;padding:1px 7px;font-size:12.5px;margin-top:2px}
-.stdrow .tx{flex:1}
-.stdrow .cp{flex:0 0 auto}
-/* 주제 */
-.projs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:16px}
-.pj{text-align:left;border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff;transition:.12s;display:flex;flex-direction:column;gap:4px}
-.pj:hover{border-color:var(--honey);background:var(--honey-x)}
-.pj .ic{font-size:24px}
-.pj .t{font-weight:800;font-size:15px}
-.pj .en{font-size:12.5px;color:var(--sub);font-weight:600}
-.pj .q{font-size:13.5px;color:var(--sub);margin-top:2px}
-.pj .tags{margin-top:6px}
-.pj .score{font-size:12px;font-weight:800;color:var(--honey-d);margin-left:auto}
-.pj.best{border-color:var(--mint-d);box-shadow:0 0 0 3px var(--mint)}
-.flow{counter-reset:f;margin:8px 0 0;padding:0;list-style:none}
-.flow li{position:relative;padding:6px 0 8px 36px;border-left:2px solid var(--line);margin-left:12px}
-.flow li::before{counter-increment:f;content:counter(f);position:absolute;left:-13px;top:6px;width:24px;height:24px;border-radius:50%;background:var(--p);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.flow li b{display:block;font-size:14px}
-.flow li span{font-size:13px;color:var(--sub)}
-/* 파트너 */
-.ask{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;background:#fff}
-.ask .q{font-weight:700;font-size:14.5px}
-.ask .w{font-size:13.5px;color:var(--sub);margin-top:2px}
-.ask .en{font-size:13.5px;color:var(--blue);margin-top:6px;display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
-.ask .en i{font-style:normal;flex:1;min-width:200px}
-.tz{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
-.tz th,.tz td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:center}
-.tz th{background:var(--soft);font-weight:700;font-size:13px}
-.tz td.ok{background:var(--honey-x);color:var(--honey-d);font-weight:700}
-.tz td.no{color:#b3b3ad}
-.cinfo{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-top:12px}
-.cinfo div{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:14px}
-.cinfo div b{display:block;font-size:11.5px;color:var(--sub);font-weight:700;margin-bottom:2px}
-.cinfo .wide{grid-column:1/-1}
-ul.tight{margin:4px 0 0 18px;padding:0;font-size:14px} ul.tight li{margin:2px 0;color:var(--sub)}
-/* 메일 */
-.mailkinds{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-.out{position:relative}
-.out textarea{min-height:320px;font-size:14px;line-height:1.6}
-.phr{display:flex;gap:8px;align-items:flex-start;padding:8px 0;border-top:1px dashed var(--line);font-size:14px}
-.phr:first-child{border-top:0}
-.phr .en{flex:1}
-.phr .ko{flex:1;color:var(--sub);font-size:13px}
-.foot{color:var(--sub);font-size:12.5px;margin-top:30px}
-.mini{background:var(--honey-x);border:1px solid #cfe3de;border-radius:12px;padding:12px 14px;margin-top:14px;font-size:14px}
-.mini b{color:var(--p-d)} .mini ol{margin:6px 0 4px 18px;padding:0} .mini li{margin:2px 0}
-.faq{border-top:1px dashed var(--line);padding:4px 0}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+.btn.sec{background:var(--fill);color:var(--text)} .btn.sec:hover{background:var(--hover)}
+.btn.tonal{background:var(--p-l);color:var(--p-d)} .btn.tonal:hover{background:#D3E9E4}
+.btn.sm{height:36px;padding:0 14px;font-size:14px;border-radius:10px}
+.btn.sm svg{width:16px;height:16px}
+.btn.lg{height:54px;padding:0 24px;font-size:16px;border-radius:15px}
+.ghost{display:inline-flex;align-items:center;gap:5px;height:32px;padding:0 10px;border-radius:9px;font-size:13px;font-weight:600;color:var(--sub);transition:background .15s,color .15s;white-space:nowrap}
+.ghost:hover{background:var(--fill);color:var(--ink)}
+.ghost svg{width:15px;height:15px}
+.iconbtn{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--mute);transition:background .15s,color .15s}
+.iconbtn:hover{background:var(--fill);color:var(--ink)}
+.iconbtn svg{width:18px;height:18px}
+.iconbtn.sm{width:32px;height:32px} .iconbtn.sm svg{width:16px;height:16px}
+.link-btn{display:inline-flex;align-items:center;gap:2px;font-size:14px;font-weight:600;color:var(--p)}
+.link-btn svg{width:16px;height:16px}
+.link-btn:hover{color:var(--p-d)}
+
+/* ---------- 칩 · 세그먼트 · 태그 ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{height:36px;padding:0 14px;border-radius:999px;background:var(--fill);color:var(--text);font-size:14px;font-weight:500;white-space:nowrap;transition:background .15s,color .15s,box-shadow .15s}
+.chip:hover{background:var(--hover)}
+.chip[aria-pressed=true]{background:var(--p-l);color:var(--p-d);font-weight:700;box-shadow:inset 0 0 0 1.5px var(--p)}
+.seg{display:inline-flex;background:var(--fill);border-radius:12px;padding:3px;gap:2px}
+.seg button{height:34px;padding:0 16px;border-radius:10px;font-size:14px;font-weight:600;color:var(--sub);transition:background .15s,color .15s,box-shadow .15s}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(16,32,31,.1),0 1px 1px rgba(16,32,31,.04)}
+.tag{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:7px;font-size:12px;font-weight:600;background:var(--fill);color:var(--sub);margin:0 4px 4px 0;white-space:nowrap}
+.tag.p{background:var(--p-l);color:var(--p-d)}
+.tag.honey{background:var(--honey-l);color:var(--honey-d)}
+.tag.blue{background:var(--blue-l);color:var(--blue)}
+.tag.lav{background:var(--lav-l);color:var(--lav)}
+.tag.rose{background:var(--rose-l);color:var(--rose)}
+
+/* ---------- 입력칸 ---------- */
+label.f{display:block;font-size:13.5px;font-weight:600;color:var(--sub);margin:18px 0 8px}
+label.f.first,.grid2 > div:nth-child(-n+2) > label.f{margin-top:0}
+input[type=text],textarea,select{width:100%;height:48px;padding:0 14px;border-radius:12px;border:1.5px solid transparent;background:var(--fill);font-size:15px;color:var(--ink);transition:background .15s,border-color .15s,box-shadow .15s}
+textarea{height:auto;min-height:96px;padding:12px 14px;line-height:1.65;resize:vertical}
+input[type=text]:hover,textarea:hover,select:hover{background:var(--hover)}
+input[type=text]:focus,textarea:focus,select:focus{outline:none;background:#fff;border-color:var(--p);box-shadow:0 0 0 4px var(--p-l)}
+input[readonly]{color:var(--text)}
+::placeholder{color:#A8B0B8}
+select{appearance:none;-webkit-appearance:none;padding-right:42px;cursor:pointer;font-weight:600;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B95A1' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:18px}
+.search{position:relative;flex:1;min-width:220px}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mute);pointer-events:none}
+.search input{padding-left:42px}
+
+/* ---------- 처음 ---------- */
+.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:28px;background:#fff;border-radius:var(--r-xl);padding:44px 44px 40px;margin-bottom:16px}
+.hero::before{content:"";position:absolute;right:-90px;top:-110px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,var(--p-l) 0%,rgba(225,240,237,0) 68%)}
+.hero::after{content:"";position:absolute;right:120px;bottom:-140px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,var(--honey-l) 0%,rgba(255,244,218,0) 70%)}
+.hero > *{position:relative;z-index:1}
+.hero h1{font-size:36px;line-height:1.25;font-weight:800;letter-spacing:-.04em;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--p)}
+.hero .sub{margin:14px 0 28px;font-size:16.5px;color:var(--sub);line-height:1.6}
+.hero-art{width:156px;height:156px;filter:drop-shadow(0 12px 24px rgba(16,32,31,.10))}
+.hero-art svg{width:100%;height:100%}
+.resume{padding:24px 28px}
+.resume-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.resume .eb{margin-bottom:4px}
+.resume .big{font-size:20px;font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+.bar{height:8px;border-radius:999px;background:var(--fill);overflow:hidden;margin:16px 0 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#2C9A8F,var(--p));border-radius:999px;transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.next{margin-top:14px;font-size:14px;color:var(--text);display:flex;gap:10px;align-items:baseline}
+.next span{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--mute)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.tile{background:#fff;border-radius:var(--r-lg);padding:22px;text-align:left;display:flex;flex-direction:column;gap:4px;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s}
+.tile:hover{transform:translateY(-3px);box-shadow:var(--lift)}
+.tile .ic{width:44px;height:44px;border-radius:14px;background:var(--p-x);color:var(--p);display:grid;place-items:center;margin-bottom:14px}
+.tile .ic svg{width:22px;height:22px}
+.tile .t{font-size:16.5px;font-weight:700;color:var(--ink);letter-spacing:-.025em}
+.tile .d{font-size:13.5px;color:var(--sub);line-height:1.55}
+.phases{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:ph}
+.phases li{position:relative;padding-top:44px}
+.phases li::before{counter-increment:ph;content:counter(ph);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--p);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+.phases li::after{content:"";position:absolute;left:38px;right:-8px;top:15px;height:2px;border-radius:2px;background:var(--p-l)}
+.phases li:last-child::after{display:none}
+.phases b{display:block;font-size:15.5px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.phases span{display:block;font-size:13.5px;color:var(--sub);margin-top:4px;line-height:1.55}
+.mini-h{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.mini-h .tag{margin:0}
+.numlist{list-style:none;margin:16px 0 0;padding:0;counter-reset:nl}
+.numlist li{position:relative;padding:12px 0 12px 40px;border-top:1px solid var(--line2);font-size:15px;color:var(--text)}
+.numlist li:first-child{border-top:0}
+.numlist li::before{counter-increment:nl;content:counter(nl);position:absolute;left:0;top:12px;width:26px;height:26px;border-radius:9px;background:var(--fill);color:var(--sub);font-size:13px;font-weight:700;display:grid;place-items:center}
+.faq{border-top:1px solid var(--line2)}
 .faq:first-of-type{border-top:0}
-.faq summary{cursor:pointer;font-weight:700;font-size:14.5px;padding:8px 0;list-style:none;display:flex;gap:8px;align-items:flex-start}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;font-size:15.5px;font-weight:600;color:var(--ink);cursor:pointer;list-style:none;letter-spacing:-.02em}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:'+';flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--honey-l);color:var(--p);font-weight:800;display:inline-flex;align-items:center;justify-content:center;font-size:14px;margin-top:1px}
-.faq[open] summary::before{content:'–'}
-.faq div{font-size:14px;color:var(--sub);padding:0 0 10px 28px}
+.faq summary::after{content:"";flex:0 0 auto;width:20px;height:20px;background:var(--faint);transition:transform .2s;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat}
+.faq[open] summary::after{transform:rotate(180deg)}
+.faq summary:hover{color:var(--p-d)}
+.faq .a{padding:0 0 20px;font-size:14.5px;color:var(--sub);line-height:1.75;max-width:680px}
+
+/* ---------- 순서 ---------- */
+.stepper{display:flex;gap:8px;overflow-x:auto;padding:2px;margin:0 -2px 16px;scrollbar-width:none}
+.stepper::-webkit-scrollbar{display:none}
+.stepper button{flex:0 0 auto;display:flex;align-items:center;gap:8px;height:42px;padding:0 16px 0 7px;border-radius:999px;background:#fff;font-size:14px;font-weight:600;color:var(--sub);transition:background .15s,color .15s}
+.stepper button:hover{color:var(--ink)}
+.stepper .n{width:28px;height:28px;border-radius:50%;background:var(--fill);display:grid;place-items:center;font-size:12.5px;font-weight:700;color:var(--sub);font-feature-settings:"tnum"}
+.stepper .n svg{width:14px;height:14px}
+.stepper button.done .n{background:var(--p-l);color:var(--p)}
+.stepper button[aria-selected=true]{background:var(--ink);color:#fff}
+.stepper button[aria-selected=true] .n{background:rgba(255,255,255,.16);color:#fff}
+.step-h{margin-bottom:8px}
+.step-h h2{font-size:22px!important;letter-spacing:-.03em!important}
+.cl{margin-top:8px}
+.ck{position:relative;display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line2);cursor:pointer}
+.ck:first-child{border-top:0}
+.ck input{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.ck .box{flex:0 0 auto;width:24px;height:24px;border-radius:50%;border:2px solid #D1D6DB;display:grid;place-items:center;margin-top:1px;color:transparent;transition:background .15s,border-color .15s,color .15s,transform .15s}
+.ck .box svg{width:14px;height:14px}
+.ck:hover .box{border-color:var(--p)}
+.ck:active .box{transform:scale(.9)}
+.ck.on .box{background:var(--p);border-color:var(--p);color:#fff}
+.ck .b{flex:1;min-width:0}
+.ck .t{display:block;font-size:15.5px;font-weight:600;color:var(--ink);letter-spacing:-.02em;transition:color .15s}
+.ck.on .t{color:var(--mute)}
+.ck .d{display:block;font-size:14px;color:var(--sub);margin-top:3px;line-height:1.6}
+.go{display:inline-flex;align-items:center;gap:2px;margin-top:10px;height:30px;padding:0 10px 0 12px;border-radius:9px;background:var(--p-x);color:var(--p-d);font-size:13px;font-weight:600;transition:background .15s}
+.go:hover{background:var(--p-l)}
+.go svg{width:14px;height:14px}
+.callout{display:flex;gap:12px;align-items:flex-start;background:var(--honey-l);border-radius:var(--r);padding:16px 18px;margin-top:20px;font-size:14px;color:#5B4818;line-height:1.65}
+.callout > .ic{flex:0 0 auto;color:#D19A13;margin-top:1px} .callout > .ic svg{width:20px;height:20px}
+.callout b{display:block;color:#7A5A00;margin-bottom:4px;font-size:14px}
+.callout ul{margin:0;padding-left:18px} .callout li{margin:2px 0}
+.callout.info{background:var(--p-x);color:var(--text)} .callout.info b{color:var(--p-d)} .callout.info > .ic{color:var(--p)}
+.pager{display:flex;justify-content:space-between;gap:8px;margin-top:4px}
+.pager .btn{max-width:48%}
+.pager .btn span{overflow:hidden;text-overflow:ellipsis}
+.finish{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 16px;border-radius:12px;background:var(--p-l);color:var(--p-d);font-weight:700;font-size:14.5px}
+
+/* ---------- 서류함 ---------- */
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.dtile{position:relative;background:var(--fill2);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:6px;transition:background .15s}
+.dtile:hover{background:#F1F3F2}
+.dtile.feat{background:var(--p-x)}
+.dtile.feat:hover{background:#E9F3F0}
+.em{width:46px;height:46px;border-radius:15px;background:#fff;display:grid;place-items:center;font-size:25px;margin-bottom:8px;flex:0 0 auto;box-shadow:0 1px 2px rgba(16,32,31,.05)}
+.dtile .t{font-size:15.5px;font-weight:700;color:var(--ink);line-height:1.45;letter-spacing:-.02em}
+.dtile .m{font-size:13.5px;color:var(--sub);line-height:1.6}
+.dtile .acts{margin-top:auto;padding-top:14px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.readyt{display:inline-flex;align-items:center;gap:5px;height:36px;padding:0 10px;border-radius:10px;font-size:13px;font-weight:600;color:var(--mute);transition:background .15s,color .15s}
+.readyt svg{width:15px;height:15px}
+.readyt:hover{background:#fff;color:var(--ink)}
+.readyt.on{color:var(--p)}
+.dtile.ready::after{content:"준비됨";position:absolute;top:20px;right:20px;font-size:11.5px;font-weight:700;color:var(--p);background:var(--p-l);border-radius:999px;padding:3px 9px}
+
+/* ---------- 자료 ---------- */
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.lk{display:flex;flex-direction:column;gap:4px;background:var(--fill2);border-radius:var(--r);padding:16px 18px;color:inherit;text-decoration:none!important;transition:background .15s,transform .15s}
+.lk:hover{background:#EFF2F0}
+.lk .t{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.4}
+.lk .t svg{width:16px;height:16px;color:var(--faint);flex:0 0 auto;margin-top:2px;transition:color .15s,transform .15s}
+.lk:hover .t svg{color:var(--p);transform:translate(1px,-1px)}
+.lk .d{font-size:13.5px;color:var(--sub);line-height:1.6}
+.lk .n{display:flex;gap:7px;align-items:baseline;font-size:12.5px;color:var(--honey-d);margin-top:6px;line-height:1.5}
+.lk .n::before{content:"";flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:var(--honey);transform:translateY(-2px)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.stdlist{margin-top:8px}
+.stdrow{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line2);font-size:14.5px;line-height:1.65}
+.stdrow:first-child{border-top:0}
+.stdrow code{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--p-d);background:var(--p-l);border-radius:7px;padding:2px 8px;margin-top:2px;font-feature-settings:"tnum";white-space:nowrap}
+.stdrow code.inc{color:var(--honey-d);background:var(--honey-l)}
+.stdrow .tx{flex:1;color:var(--text)}
+.stdrow .iconbtn{margin:-4px -6px 0 0}
+.empty{padding:28px 0;text-align:center;color:var(--mute);font-size:14px}
+
+/* ---------- 주제 찾기 ---------- */
+.frow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line2);align-items:start}
+.frow:first-of-type{border-top:0;padding-top:4px}
+.frow .fl{font-size:13.5px;font-weight:700;color:var(--sub);padding-top:8px;line-height:1.4}
+.frow .fl small{display:block;font-size:12px;font-weight:500;color:var(--mute);margin-top:2px}
+.projs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.pj{background:#fff;border-radius:20px;padding:20px;text-align:left;display:flex;flex-direction:column;gap:2px;transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s}
+.pj:hover{transform:translateY(-3px);box-shadow:var(--lift)}
+.pj.on{box-shadow:inset 0 0 0 2px var(--p)}
+.pj .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.pj .em{margin:0;background:var(--fill2);box-shadow:none}
+.badge{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px;border-radius:999px;font-size:12px;font-weight:700;color:var(--p);background:var(--p-l)}
+.badge svg{width:12px;height:12px}
+.pj .t{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.025em;line-height:1.4}
+.pj .en{font-size:12.5px;color:var(--mute);font-weight:500}
+.pj .q{font-size:13.5px;color:var(--sub);margin:8px 0 14px;line-height:1.6}
+.pj .tags{margin-top:auto}
+.detail-h{display:flex;align-items:flex-start;gap:14px;margin-bottom:6px}
+.detail-h .em{margin:0;background:var(--fill2);box-shadow:none;width:52px;height:52px;font-size:28px}
+.detail-h .tt{flex:1;min-width:0}
+.detail-h h2{font-size:21px!important;letter-spacing:-.03em!important}
+.quote{font-size:15.5px;color:var(--text);margin:14px 0 12px;padding-left:14px;border-left:3px solid var(--p-l);line-height:1.6}
+.cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;margin-top:20px}
+.flow{list-style:none;margin:0;padding:0;counter-reset:f}
+.flow li{position:relative;padding:0 0 18px 40px}
+.flow li::before{counter-increment:f;content:counter(f);position:absolute;left:0;top:-1px;width:26px;height:26px;border-radius:50%;background:var(--p-l);color:var(--p-d);font-size:12.5px;font-weight:700;display:grid;place-items:center}
+.flow li::after{content:"";position:absolute;left:12.5px;top:30px;bottom:4px;width:1.5px;background:var(--line2)}
+.flow li:last-child{padding-bottom:0} .flow li:last-child::after{display:none}
+.flow b{display:block;font-size:14.5px;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.flow span{display:block;font-size:13.5px;color:var(--sub);line-height:1.55;margin-top:1px}
+.info{background:var(--fill2);border-radius:14px;padding:14px 16px;font-size:14px;color:var(--text);line-height:1.65;margin-bottom:10px}
+.info b{display:block;font-size:12.5px;color:var(--mute);font-weight:600;margin-bottom:4px}
+.info .en{display:block;color:var(--sub);font-size:13px;margin-top:4px}
+
+/* ---------- 파트너교 ---------- */
+.ask{padding:16px 0;border-top:1px solid var(--line2)}
+.ask:first-of-type{border-top:0}
+.ask .q{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.ask .w{font-size:13.5px;color:var(--sub);margin-top:2px;line-height:1.6}
+.ask .en{display:flex;align-items:center;gap:8px;margin-top:10px;background:var(--fill2);border-radius:12px;padding:8px 6px 8px 14px;font-size:14px;color:var(--ink);line-height:1.5}
+.ask .en i{font-style:normal;flex:1}
+.mtiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mt{background:var(--fill2);border-radius:var(--r);padding:18px}
+.mt h4{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;color:var(--ink);margin:0 0 8px;letter-spacing:-.02em}
+.mt h4 .n{width:22px;height:22px;border-radius:7px;background:#fff;color:var(--p);font-size:12px;display:grid;place-items:center;box-shadow:0 1px 2px rgba(16,32,31,.06)}
+.mt ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--sub);line-height:1.7}
+.cinfo{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0 0}
+.cinfo div{background:var(--fill2);border-radius:14px;padding:14px 16px;min-width:0}
+.cinfo b{display:block;font-size:12px;color:var(--mute);font-weight:600;margin-bottom:4px}
+.cinfo span{display:block;font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.45}
+.cnote{margin-top:10px;font-size:13.5px;color:var(--sub);display:flex;gap:8px;align-items:baseline}
+.cnote::before{content:"";flex:0 0 auto;width:5px;height:5px;border-radius:50%;background:var(--honey);transform:translateY(-2px)}
+.tzg{display:grid;grid-template-columns:96px repeat(7,minmax(0,1fr));gap:4px;margin-top:20px}
+.tzl{display:flex;align-items:center;font-size:13px;font-weight:700;color:var(--sub);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tzc{display:flex;flex-direction:column;align-items:center;justify-content:center;height:46px;border-radius:10px;background:var(--fill2);font-size:13.5px;font-weight:600;color:var(--mute);font-feature-settings:"tnum";line-height:1.15}
+.tzc.k{background:transparent;color:var(--text)}
+.tzc.ok{background:var(--p-l);color:var(--p-d)}
+.tzc small{font-size:10.5px;font-weight:600;opacity:.8}
+.tzmsg{margin-top:12px;font-size:13.5px;color:var(--sub)}
+
+/* ---------- 메일 ---------- */
+.mailbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}
+.pickinfo{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--sub);background:var(--fill2);border-radius:999px;height:36px;padding:0 14px 0 8px}
+.pickinfo .tf{font-size:18px}
+.pickinfo b{color:var(--ink);font-weight:600}
+.letter textarea{min-height:380px;font-size:14.5px;line-height:1.75;background:var(--fill2)}
+.phr{display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--line2);font-size:14.5px}
+.phr:first-of-type{border-top:0}
+.phr .en{flex:1.1;color:var(--ink);font-weight:500}
+.phr .ko{flex:1;color:var(--sub);font-size:13.5px}
+
+/* ---------- 시트(모달) ---------- */
+.modal{position:fixed;inset:0;background:rgba(14,24,23,.42);display:none;align-items:flex-end;justify-content:center;z-index:60}
+.modal.on{display:flex;animation:fade .2s ease}
+.modal .in{background:#fff;width:100%;max-width:860px;max-height:92vh;overflow:auto;border-radius:24px 24px 0 0;padding:0 28px;box-shadow:var(--pop);animation:up .32s cubic-bezier(.2,.8,.2,1)}
+@media (min-width:760px){.modal{align-items:center;padding:28px}.modal .in{border-radius:24px;max-height:88vh}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes up{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}
+.mh{position:sticky;top:0;z-index:3;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 0 16px;margin-bottom:4px}
+.mh h2{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:700;color:var(--ink);letter-spacing:-.025em;line-height:1.35}
+.mh .em{margin:0;width:40px;height:40px;font-size:22px;background:var(--fill2);box-shadow:none;border-radius:13px}
+.mdesc{font-size:14px;color:var(--sub);line-height:1.65;margin-bottom:18px}
+.mf{position:sticky;bottom:0;z-index:3;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:14px 0 22px;margin-top:20px;border-top:1px solid var(--line2)}
+.mf .sp{flex:1}
+.pre{white-space:pre-wrap;background:var(--fill2);border-radius:var(--r);padding:20px 22px;font-size:14px;line-height:1.8;color:var(--text)}
+.plabel{display:flex;align-items:center;justify-content:space-between;margin:26px 0 10px;font-size:13.5px;font-weight:700;color:var(--sub)}
+#formPreview{background:var(--fill);border-radius:var(--r);padding:28px 20px;overflow:auto}
+#formPreview .paper{background:#fff;max-width:640px;margin:0 auto;padding:48px 52px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);font-size:13.5px;line-height:1.75;color:#111;letter-spacing:0}
+#formPreview .paper p{margin:0 0 9px} #formPreview .ctr{text-align:center} #formPreview .logo-slot{color:#B5B5B5;font-size:11px}
+#formPreview .blank{display:inline-block;border-bottom:1px solid #444;height:1.05em;vertical-align:bottom;background:var(--honey-l)}
+#formPreview .sig{display:inline-block;margin-left:22px;color:#AAA;font-size:11px}
+#formPreview h4{margin:16px 0 6px;font-size:14px;font-weight:700}
+#formPreview table.ptab{border-collapse:collapse;width:100%;font-size:12.5px}
+#formPreview table.ptab th,#formPreview table.ptab td{border:1px solid #999;padding:5px 8px;text-align:left;vertical-align:top}
+#formPreview table.ptab th{background:#F4F4F2;white-space:nowrap;font-weight:600}
+#formPreview hr{border:0;border-top:1px dashed #BBB;margin:16px 0} #formPreview ul{margin:4px 0 8px 20px;padding:0}
+
+/* ---------- 알림 ---------- */
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,16px);display:flex;align-items:center;gap:8px;background:#1C2524;color:#fff;padding:12px 18px 12px 14px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;transition:opacity .2s,transform .25s cubic-bezier(.2,.8,.2,1);pointer-events:none;z-index:80;box-shadow:var(--pop);max-width:calc(100% - 32px)}
+.toast::before{content:"";flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:var(--p) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E") center/13px no-repeat}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- 좁은 화면 ---------- */
+@media (max-width:900px){
+  .app{display:block}
+  .side{position:sticky;top:0;z-index:30;height:auto;flex-direction:column;gap:0;padding:0;border-right:0;border-bottom:1px solid var(--line2);background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px)}
+  .brand{padding:12px 18px 6px}
+  .brand .logo{width:34px;height:34px;border-radius:11px} .brand .logo .bee{width:28px;height:28px}
+  .brand b{font-size:17px} .brand small{display:none}
+  .tabs{flex-direction:row;overflow-x:auto;gap:6px;padding:6px 14px 12px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;height:36px;padding:0 14px;border-radius:999px;font-size:14px;gap:6px;background:var(--fill)}
+  .tab .ic{display:none}
+  .tab[aria-selected=true]{background:var(--ink);color:#fff}
+  .side-foot{display:none}
+  .main{padding:28px 16px 72px}
+  .ph h1{font-size:25px}
+}
+@media (max-width:640px){
+  .card{padding:22px 20px;border-radius:20px}
+  .hero{grid-template-columns:1fr;padding:28px 22px 26px;gap:0;border-radius:24px}
+  .hero-art{order:-1;width:76px;height:76px;margin-bottom:16px}
+  .hero h1{font-size:27px}
+  .hero .sub{font-size:15px;margin:10px 0 22px}
+  .hero .row .btn{flex:1}
+  .tiles{grid-template-columns:1fr 1fr;gap:10px}
+  .tile{padding:18px}
+  .tile .d{display:none}
+  .phases{grid-template-columns:1fr;gap:0}
+  .phases li{padding:0 0 18px 44px}
+  .phases li::after{left:14px;right:auto;top:36px;bottom:2px;width:2px;height:auto}
+  .grid2,.cols,.mtiles{grid-template-columns:1fr}
+  .grid2 > div:nth-child(2) > label.f{margin-top:18px}
+  .cinfo{grid-template-columns:1fr 1fr}
+  .frow{grid-template-columns:1fr;gap:10px}
+  .frow .fl{padding-top:0}
+  .tzg{grid-template-columns:52px repeat(7,minmax(0,1fr));gap:3px}
+  .tzc{font-size:12px;height:42px}
+  .phr{flex-direction:column;align-items:flex-start;gap:2px}
+  .phr .ghost{align-self:flex-end;margin-top:-28px}
+  .modal .in{padding:0 20px}
+  .mf{gap:6px;padding:12px 0 18px}
+  .mf .btn{height:42px;font-size:14px;padding:0 12px;flex:1 1 40%}
+  .mf .sp{display:none}
+  .mf .ghost{flex:1 1 40%;justify-content:center;height:42px}
+  #formPreview{padding:14px 10px}
+  #formPreview .paper{padding:28px 22px}
+  .resume-top{flex-direction:column;align-items:flex-start}
+  .pager .btn{max-width:none;flex:1}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
   <aside class="side">
-    <div class="brand"><span class="logo" id="logo"><img src="globee.png" alt="" onerror="this.parentNode.classList.remove('has')" onload="this.parentNode.classList.add('has')"><span class="bee" id="beeSlot"></span></span><div><b id="appName"></b><small id="appSub"></small></div></div>
+    <div class="brand"><span class="logo" id="logo"><img alt="" onerror="this.parentNode.classList.remove('has')" onload="this.parentNode.classList.add('has')"><span class="bee" id="beeSlot"></span></span><div><b id="appName"></b><small id="appSub"></small></div></div>
     <nav class="tabs" id="tabs" role="tablist"></nav>
-    <div class="side-foot"><button class="ghost" id="btnReset" title="이 기기에 저장된 체크·입력을 지웁니다">기록 지우기</button></div>
+    <div class="side-foot"><span id="sideUpd"></span><span>체크·입력은 이 기기에만 저장돼요</span><button class="ghost" id="btnReset" title="이 기기에 저장된 체크·입력을 지웁니다">기록 지우기</button></div>
   </aside>
   <main class="main">
     <div id="view"></div>
@@ -235,7 +442,8 @@ ul.tight{margin:4px 0 0 18px;padding:0;font-size:14px} ul.tight li{margin:2px 0;
 const APP_NAME = 'Globee';
 const APP_SUB  = '초등 국제교류 길잡이';
 const SAVE_KEY = 'globee-v1';   // 이 기기 브라우저에 체크·입력이 저장되는 이름. 바꾸면 기록이 사라집니다.
-const UPDATED  = '2026-10-30';
+const UPDATED  = '2026-11-01';
+const LOGO     = '';   // 로고 그림을 쓰려면 같은 폴더에 파일을 두고 'globee.png'처럼 적어요. 비우면 그려 둔 꿀벌이 나와요.
 
 /* ---------- 탭 ---------- */
 const TABS = [
@@ -853,7 +1061,7 @@ const LENS  = {short:'짧게 (1~3차시)', mid:'중간 (4~6차시)', long:'길�
 const PROJECTS = [
  {id:'incheon', ic:'🗺', t:'인천 여행 코스 만들기', en:'Welcome to Incheon', band:['56'], mode:'both', len:'mid',
   q:'다른 나라 친구가 인천에 온다면 어디로 데려갈까?',
-  ic:['rel'], ib:['place'], gced:['identity','connect'], sdg:[11], subj:['영어','사회','국어'],
+  inc:['rel'], ib:['place'], gced:['identity','connect'], sdg:[11], subj:['영어','사회','국어'],
   std:['6인세01-01','6인세01-02','6영02-04','6영02-05','6국01-05','6사09-02'],
   flow:[['인천 명소 조사','패들렛에 모둠별로 모으기(개항장·송도·강화·공항 등)'],['여행 코스 짜기','한국어로 먼저, 하루 코스 3곳'],['영어로 소개 자료','This is… / We can… / My favorite… 표현으로'],['갤러리 투어·고치기','반 친구들 피드백 받아 다듬기'],['화상 발표','상대 반에 발표하고 가고 싶은 코스 투표(비동기면 영상으로)']],
   out:'인천 여행 코스 소개 자료, 투표 결과',
@@ -862,7 +1070,7 @@ const PROJECTS = [
   src:'인천교육청 「인천형 세계시민교육 초등 성취기준 기반 프로젝트 수업 자료집」 7번(서면초)·4번(명선초) 사례를 바탕으로'},
  {id:'hello', ic:'👋', t:'우리 학교·우리 동네 소개', en:'Hello from Our School', band:['34','56'], mode:'async', len:'short',
   q:'우리 학교의 하루를 처음 보는 친구에게 어떻게 보여 줄까?',
-  ic:['rel'], ib:['who','place'], gced:['identity'], sdg:[4], subj:['영어','사회','국어'],
+  inc:['rel'], ib:['who','place'], gced:['identity'], sdg:[4], subj:['영어','사회','국어'],
   std:['4영02-05','6영02-04','4사01-01','4사09-02','6국06-03','4국06-03','4인세01-01','6인세01-01'],
   flow:[['무엇을 보여 줄까','교실·급식·운동장·동네 가운데 세 곳 고르기, 영어 문장 3개 준비'],['만들기','모둠별 1분 소개 영상 또는 사진 4장+문장'],['보내고 받기','패들렛에 올리고 상대 반 영상 보기'],['답장','궁금한 것 3가지 질문 카드로 보내기, 받은 질문에 답하기']],
   out:'소개 영상(사진 카드)과 질문·답 카드',
@@ -870,7 +1078,7 @@ const PROJECTS = [
   goalEn:'introduce our schools and neighborhoods to each other and exchange questions as a first step'},
  {id:'lunch', ic:'🍱', t:'점심시간 교환', en:"What's for Lunch?", band:['34','56'], mode:'async', len:'short',
   q:'우리 급식과 너희 점심, 무엇이 같고 무엇이 다를까?',
-  ic:['rel','value'], ib:['express','planet'], gced:['identity','connect'], sdg:[2,12], subj:['영어','사회','실과'],
+  inc:['rel','value'], ib:['express','planet'], gced:['identity','connect'], sdg:[2,12], subj:['영어','사회','실과'],
   std:['4사03-02','6실02-06','6영02-07','4영02-08','4인세02-01','6인세01-01'],
   flow:[['일주일 급식 기록','사진 또는 그림, 음식 이름 영어로'],['보내고 비교하기','상대 반 점심 보고 같은 것·다른 것 찾기'],['이유 찾기','왜 다를까? 기후·종교·문화 이야기 나누기'],['우리 반 추천 메뉴','상대에게 추천하는 한국 음식 한 가지 소개']],
   out:'급식 비교표, 추천 음식 카드',
@@ -878,7 +1086,7 @@ const PROJECTS = [
   goalEn:'compare our school lunches and enjoy learning about each other\'s food culture'},
  {id:'day', ic:'🎒', t:'나의 하루', en:'A Day in My Life', band:['34'], mode:'async', len:'short',
   q:'아침부터 잠들 때까지, 너의 하루는 나와 얼마나 비슷할까?',
-  ic:['rel'], ib:['who'], gced:['identity'], sdg:[4], subj:['영어','사회'],
+  inc:['rel'], ib:['who'], gced:['identity'], sdg:[4], subj:['영어','사회'],
   std:['4영02-05','4영01-10','4사03-01','4국01-04','4인세01-01'],
   flow:[['하루 시간표 그리기','그림+영어 단어로 하루 흐름'],['교환·비교','같은 점 다른 점 표 만들기'],['궁금한 것 묻기','질문 3개 보내고 답 받기']],
   out:'그림 시간표, 비교표',
@@ -886,7 +1094,7 @@ const PROJECTS = [
   goalEn:'compare our daily routines and discover what we share and how we differ'},
  {id:'art', ic:'📬', t:'그림엽서·작품 교환', en:'Postcard Art Exchange', band:['34','56'], mode:'async', len:'mid',
   q:'우리 동네 풍경을 그림 한 장에 담아 보내면, 친구는 무엇을 느낄까?',
-  ic:['rel'], ib:['express','place'], gced:['identity'], sdg:[11], subj:['미술','영어','국어'],
+  inc:['rel'], ib:['express','place'], gced:['identity'], sdg:[11], subj:['미술','영어','국어'],
   std:['4미02-04','6미03-04','6미03-01','4미03-02','4국03-04','4인세01-01','6인세01-01'],
   flow:[['주제 정하기','우리 동네의 계절·풍경·명소'],['그리기','엽서 크기, 뒷면에 영어 한 줄'],['보내기','스캔해서 온라인으로, 또는 실제 우편'],['감상·답장','받은 작품을 보고 느낌 말하기, 질문 보내기'],['작은 전시','두 학급 작품을 한 패들렛에 모아 전시']],
   out:'엽서 작품, 온라인 합동 전시',
@@ -894,7 +1102,7 @@ const PROJECTS = [
   goalEn:'share our neighborhoods through postcard art and appreciate each other\'s work'},
  {id:'song', ic:'🎵', t:'노래와 놀이 교환', en:'Songs and Games We Love', band:['34','56'], mode:'both', len:'mid',
   q:'우리가 좋아하는 놀이를 가르쳐 주면 친구들도 재미있어할까?',
-  ic:['rel'], ib:['express'], gced:['identity'], sdg:[3], subj:['음악','체육','영어'],
+  inc:['rel'], ib:['express'], gced:['identity'], sdg:[3], subj:['음악','체육','영어'],
   std:['4음01-03','4음02-02','6음02-02','6음01-04','6영02-05','4인세01-03'],
   flow:[['고르기','우리 반 놀이 1개, 노래 1개'],['설명 영상 만들기','규칙을 영어 문장+동작으로'],['배워서 해 보기','상대 반 놀이를 우리 교실에서 해 보고 영상으로 답장'],['실시간 함께 하기(선택)','화상으로 같이 노래 부르기']],
   out:'놀이 설명 영상, 함께 부른 노래',
@@ -902,7 +1110,7 @@ const PROJECTS = [
   goalEn:'teach each other our favorite songs and games and enjoy them together'},
  {id:'weather', ic:'🌦', t:'날씨·기후 일기', en:'Weather Diary', band:['34','56'], mode:'async', len:'mid',
   q:'같은 날, 우리 하늘과 너희 하늘은 어떻게 다를까?',
-  ic:['issue'], ib:['works'], gced:['connect','sustain'], sdg:[13], subj:['사회','과학','영어'],
+  inc:['issue'], ib:['works'], gced:['connect','sustain'], sdg:[13], subj:['사회','과학','영어'],
   std:['6사10-02','6사02-01','4사10-01','6영02-06','4인세03-02','6인세03-02'],
   flow:[['2주 날씨 기록','기온·하늘·옷차림 사진'],['그래프로 비교','두 도시 기온 그래프 겹쳐 보기'],['이유 탐구','위치·기후대 찾기(지구본·지도)'],['기후변화 이야기','요즘 달라진 날씨 서로 물어보기']],
   out:'날씨 비교 그래프, 기후 이야기 카드',
@@ -910,7 +1118,7 @@ const PROJECTS = [
   goalEn:'compare the weather in our two cities on the same days and explore how climate shapes daily life'},
  {id:'waste', ic:'♻️', t:'쓰레기 줄이기 챌린지', en:'Less Waste Challenge', band:['56'], mode:'both', len:'mid',
   q:'두 교실이 함께하면 쓰레기를 얼마나 줄일 수 있을까?',
-  ic:['issue','act'], ib:['planet'], gced:['sustain','action'], sdg:[12,13], subj:['실과','도덕','사회'],
+  inc:['issue','act'], ib:['planet'], gced:['sustain','action'], sdg:[12,13], subj:['실과','도덕','사회'],
   std:['6실02-03','6실02-11','6도04-02','6사12-02','6인세03-03','6인세04-03'],
   flow:[['우리 교실 쓰레기 조사','일주일 분량 사진·무게'],['규칙 정해 보내기','각 반 실천 약속 3개 교환'],['2주 실천','중간 결과 공유'],['결과 비교·발표','줄인 양, 어려웠던 점, 서로 칭찬하기']],
   out:'실천 약속 포스터, 결과 그래프',
@@ -918,7 +1126,7 @@ const PROJECTS = [
   goalEn:'run a joint challenge to reduce classroom waste and share what we learn'},
  {id:'water', ic:'💧', t:'물과 우리 생활', en:'Water in Our Lives', band:['56'], mode:'async', len:'mid',
   q:'우리는 물을 어디서 얻고, 어떻게 쓰고, 얼마나 아낄 수 있을까?',
-  ic:['issue','act'], ib:['planet','works'], gced:['sustain','connect'], sdg:[6], subj:['사회','과학','도덕'],
+  inc:['issue','act'], ib:['planet','works'], gced:['sustain','connect'], sdg:[6], subj:['사회','과학','도덕'],
   std:['6사10-02','6사12-02','6도04-01','6인세03-02','6인세04-02'],
   flow:[['하루 물 사용 조사','가정·학교에서'],['물의 길 찾기','우리 동네 물은 어디서 오나'],['교환·비교','상대 지역의 물 사정 듣기'],['실천 약속','아끼는 방법 함께 정하기']],
   out:'물 사용 조사표, 실천 약속',
@@ -926,7 +1134,7 @@ const PROJECTS = [
   goalEn:'compare how we use water in our two regions and find ways to save it together'},
  {id:'news', ic:'📰', t:'뉴스 탐정단', en:'News Detectives', band:['56'], mode:'async', len:'mid',
   q:'같은 사건을 두 나라 뉴스는 어떻게 다르게 전할까?',
-  ic:['issue'], ib:['organize'], gced:['connect','rights'], sdg:[16], subj:['국어','사회'],
+  inc:['issue'], ib:['organize'], gced:['connect','rights'], sdg:[16], subj:['국어','사회'],
   std:['6국06-02','6사08-03','6국02-04','6인세03-01','6인세04-01'],
   flow:[['뉴스 고르기','두 나라에 모두 보도된 사건 하나'],['살펴보기','제목·사진·분량 비교, 믿을 만한지 점검'],['교환','각자 본 뉴스 요약 보내기'],['토의','왜 다를까, 어떻게 읽어야 할까']],
   out:'뉴스 비교표, 뉴스 읽기 약속',
@@ -934,7 +1142,7 @@ const PROJECTS = [
   goalEn:'compare how the news in our two countries covers the same event and learn to read media critically'},
  {id:'ai', ic:'🤖', t:'AI와 함께 사는 법', en:'Living with AI', band:['56'], mode:'both', len:'mid',
   q:'AI가 숙제를 도와줘도 될까? 두 나라 친구들의 생각은?',
-  ic:['value'], ib:['works','organize'], gced:['action','rights'], sdg:[4,16], subj:['도덕','실과','국어'],
+  inc:['value'], ib:['works','organize'], gced:['action','rights'], sdg:[4,16], subj:['도덕','실과','국어'],
   std:['6도02-03','6실05-05','6국01-06','6국01-07','6인세02-02'],
   flow:[['우리 반 생각 세우기','주장·이유·근거로 (생각 모으기 앱 활용)'],['질문 교환','상대 반에 묻고 싶은 것 3개'],['결과 나누기','두 반의 생각 분포 비교'],['함께 약속 만들기','AI를 쓸 때 지킬 규칙 두 반 공동안']],
   out:'두 반 공동 AI 사용 약속',
@@ -942,7 +1150,7 @@ const PROJECTS = [
   goalEn:'share opinions about using AI in school and create a joint set of guidelines'},
  {id:'jobs', ic:'🧑‍💼', t:'미래 직업 탐험', en:'Jobs of the Future', band:['56'], mode:'async', len:'mid',
   q:'20년 뒤 우리 동네에는 어떤 직업이 생길까?',
-  ic:['rel'], ib:['organize','works'], gced:['connect'], sdg:[8], subj:['실과','도덕','영어'],
+  inc:['rel'], ib:['organize','works'], gced:['connect'], sdg:[8], subj:['실과','도덕','영어'],
   std:['6실01-07','6도01-03','6영02-06','4인세01-02','6인세01-01'],
   flow:[['우리 동네 직업 조사','부모님·이웃 인터뷰'],['미래 직업 상상','그림+영어 설명'],['교환','상대 나라에서 인기 있는 직업 듣기'],['발표','두 나라 미래 직업 전시']],
   out:'미래 직업 카드 전시',
@@ -950,7 +1158,7 @@ const PROJECTS = [
   goalEn:'compare jobs in our two countries and imagine the jobs of the future'},
  {id:'rules', ic:'🕊', t:'평화로운 교실 약속', en:'Our Class Peace Rules', band:['34','56'], mode:'async', len:'short',
   q:'친구와 다툴 때 너희 반은 어떻게 해결해?',
-  ic:['issue','value'], ib:['organize'], gced:['rights'], sdg:[16], subj:['도덕','사회'],
+  inc:['issue','value'], ib:['organize'], gced:['rights'], sdg:[16], subj:['도덕','사회'],
   std:['6도03-02','4도03-01','4사08-01','4도02-02','4인세03-01','6인세03-01'],
   flow:[['우리 반 규칙 소개','사진·그림으로'],['교환·질문','상대 반 규칙에서 배우고 싶은 것'],['공동 약속','두 반이 함께 지킬 약속 하나 정하기']],
   out:'두 반 공동 약속 포스터',
@@ -958,7 +1166,7 @@ const PROJECTS = [
   goalEn:'compare our class rules and agree on one shared promise'},
  {id:'problem', ic:'🌍', t:'지구촌 문제, 두 교실이 함께', en:'One Problem, Two Classes', band:['56'], mode:'both', len:'long',
   q:'우리가 고른 지구촌 문제를 두 교실이 함께 해결해 볼 수 있을까?',
-  ic:['issue','act'], ib:['planet'], gced:['sustain','action','connect'], sdg:[17,13,10], subj:['사회','도덕','국어'],
+  inc:['issue','act'], ib:['planet'], gced:['sustain','action','connect'], sdg:[17,13,10], subj:['사회','도덕','국어'],
   std:['6사12-02','6도03-04','6국01-06','6국03-02','6인세04-01','6인세04-02','6인세04-03'],
   flow:[['문제 고르기','각 반 후보 3개 → 투표 아닌 토의로 하나'],['조사','각 나라에서 그 문제는 어떤 모습인지'],['해결 아이디어 교환','실시간 토의 1회'],['함께 실천','캠페인·포스터·영상'],['결과 나눔','두 학교 발표회']],
   out:'공동 캠페인 결과물',
@@ -966,7 +1174,7 @@ const PROJECTS = [
   goalEn:'investigate one global issue together and take action as two classes'},
  {id:'book', ic:'📚', t:'같은 책 함께 읽기', en:'Shared Story', band:['34','56'], mode:'async', len:'mid',
   q:'같은 이야기를 읽고 우리는 같은 장면에서 웃을까?',
-  ic:['rel'], ib:['express'], gced:['identity'], sdg:[4], subj:['국어','영어'],
+  inc:['rel'], ib:['express'], gced:['identity'], sdg:[4], subj:['국어','영어'],
   std:['4국05-03','6국05-04','6영01-09','4영01-09','4인세01-01'],
   flow:[['책 고르기','양쪽 언어로 있는 그림책'],['읽고 표시','가장 좋은 장면·궁금한 장면'],['교환','장면 그림+한 줄 생각'],['뒷이야기 함께 쓰기','한 쪽씩 번갈아']],
   out:'합동 뒷이야기 책',
@@ -974,7 +1182,7 @@ const PROJECTS = [
   goalEn:'read the same picture book, share our reactions, and write a continuation together'},
  {id:'heritage', ic:'🏛', t:'우리 지역 문화유산 가이드', en:'Heritage Guides', band:['34','56'], mode:'async', len:'mid',
   q:'우리 동네에서 꼭 보여 주고 싶은 한 곳은?',
-  ic:['rel'], ib:['place'], gced:['identity','connect'], sdg:[11], subj:['사회','미술','국어'],
+  inc:['rel'], ib:['place'], gced:['identity','connect'], sdg:[11], subj:['사회','미술','국어'],
   std:['4사06-01','6미03-01','6국01-05','4국01-05','4인세02-01','6인세01-01'],
   flow:[['고르기·조사','인천 문화유산 한 곳'],['안내 자료 만들기','영어 한 줄 설명+사진'],['교환·질문','상대 지역 유산 보고 질문'],['가상 여행','구글 어스로 서로 동네 둘러보기']],
   out:'문화유산 안내 카드',
@@ -982,7 +1190,7 @@ const PROJECTS = [
   goalEn:'introduce local heritage sites to each other and take a virtual tour'},
  {id:'decide', ic:'🗳', t:'우리는 어떻게 정할까', en:'How We Decide', band:['56'], mode:'async', len:'short',
   q:'학급 회의, 너희 반은 어떻게 해?',
-  ic:['value'], ib:['organize'], gced:['rights','action'], sdg:[16], subj:['사회','도덕'],
+  inc:['value'], ib:['organize'], gced:['rights','action'], sdg:[16], subj:['사회','도덕'],
   std:['6사08-01','4사08-01','6도03-02','4인세02-02','6인세02-02'],
   flow:[['우리 반 회의 소개','영상 또는 사진'],['교환·비교','다수결 말고 다른 방법도 있나'],['해 보기','상대 반 방법으로 한 번 회의하기']],
   out:'회의 방법 비교표',
@@ -990,7 +1198,7 @@ const PROJECTS = [
   goalEn:'compare how our classes make decisions and experience democracy in action'},
  {id:'trade', ic:'🛒', t:'이 물건은 어디서 왔을까', en:'Where Do Things Come From?', band:['56'], mode:'async', len:'mid',
   q:'내 필통 속 물건들은 몇 나라를 거쳐 왔을까?',
-  ic:['rel','value'], ib:['works','organize'], gced:['connect','sustain'], sdg:[12,8], subj:['사회','실과'],
+  inc:['rel','value'], ib:['works','organize'], gced:['connect','sustain'], sdg:[12,8], subj:['사회','실과'],
   std:['6사11-03','4사07-02','6실02-03','4인세01-01','6인세01-03','6인세02-01'],
   flow:[['물건 조사','원산지 표시 찾기'],['지도에 표시','두 반 물건의 길 비교'],['교환·토의','왜 서로의 나라 물건이 있을까'],['현명한 소비','함께 정한 소비 약속']],
   out:'물건의 길 지도',
@@ -998,7 +1206,7 @@ const PROJECTS = [
   goalEn:'trace where our everyday things come from and understand how trade connects us'},
  {id:'plant', ic:'🌱', t:'함께 키우기', en:'Growing Together', band:['34','56'], mode:'async', len:'long',
   q:'같은 씨앗을 두 나라에서 심으면 누가 더 빨리 자랄까?',
-  ic:['issue','act'], ib:['planet','works'], gced:['sustain'], sdg:[15,13], subj:['실과','과학','도덕'],
+  inc:['issue','act'], ib:['planet','works'], gced:['sustain'], sdg:[15,13], subj:['실과','과학','도덕'],
   std:['6실04-08','4도04-02','6도04-01','4인세03-02','6인세04-03'],
   flow:[['씨앗 정하기','양쪽에서 구할 수 있는 것(콩·상추)'],['관찰 일기','주 1회 사진 교환'],['비교','기온·햇빛과 자람 비교'],['수확 잔치','영상으로 나누기']],
   out:'관찰 일기, 성장 비교 그래프',
@@ -1482,6 +1690,25 @@ const FORMS = [
        <b>Contact:</b> ${b('teacher',80)} (Korea) · ${b('pteacher',120)}</p>
    </div>`; }},
 ];
+const sv = (d, w) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w||1.9}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+const IC = {
+ arrowR: sv('<path d="M9 5.5l6.5 6.5L9 18.5"/>', 2.1),
+ arrowL: sv('<path d="M15 5.5L8.5 12l6.5 6.5"/>', 2.1),
+ ext:    sv('<path d="M7 17L17 7"/><path d="M8.5 7H17v8.5"/>', 2),
+ copy:   sv('<rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 017.5 4H15"/>'),
+ check:  sv('<path d="M5 12.5l4.5 4.5L19 7.5"/>', 2.8),
+ close:  sv('<path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>', 2),
+ search: sv('<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/>', 2),
+ print:  sv('<path d="M7 9V4.5h10V9"/><rect x="3.5" y="9" width="17" height="8" rx="2.5"/><path d="M7 14h10v5.5H7z"/>'),
+ down:   sv('<path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 19.5h14"/>'),
+ bulb:   sv('<path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.7.5 1.1 1.3 1.1 2.1h4.8c0-.8.4-1.6 1.1-2.1A6 6 0 0012 3z"/>'),
+ shield: sv('<path d="M12 3l7.5 3v5.5c0 4.4-3.2 8-7.5 9.5-4.3-1.5-7.5-5.1-7.5-9.5V6z"/><path d="M9 12l2 2 4-4"/>'),
+ spark:  sv('<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/>', 2),
+ trash:  sv('<path d="M4 7h16"/><path d="M9 7V4.5h6V7"/><path d="M6.5 7l1 13h9l1-13"/>'),
+ word:   sv('<path d="M14 3.5H7A2.5 2.5 0 004.5 6v12A2.5 2.5 0 007 20.5h10a2.5 2.5 0 002.5-2.5V9z"/><path d="M14 3.5V9h5.5"/><path d="M8.5 13l1.3 4 1.7-4 1.7 4 1.3-4"/>'),
+};
+const PH = (eb, h, p) => `<header class="ph"><p class="eb">${eb}</p><h1>${h}</h1>${p?`<p>${p}</p>`:''}</header>`;
+const TF = e => `<span class="tf">${e}</span>`;
 /* ===================== 데이터 끝 ===================== */
 
 
@@ -1504,11 +1731,12 @@ function go(tab, extra){
   save(); render(); window.scrollTo({top:0, behavior:'smooth'});
 }
 function render(){
-  $('#appName').textContent = APP_NAME; $('#appSub').textContent = APP_SUB; if(!$('#beeSlot').innerHTML) $('#beeSlot').innerHTML = BEE;
-  $('#tabs').innerHTML = TABS.map(t=>`<button class="tab" role="tab" aria-selected="${S.tab===t.id}" data-go="${t.id}"><span class="ic">${ICON[t.id]||t.ic}</span>${t.t}</button>`).join('');
+  $('#appName').textContent = APP_NAME; $('#appSub').textContent = APP_SUB; if(!$('#beeSlot').innerHTML){ $('#beeSlot').innerHTML = BEE; if(LOGO) $('#logo img').src = LOGO; }
+  $('#sideUpd').textContent = '업데이트 ' + UPDATED;
+  $('#tabs').innerHTML = TABS.map(t=>`<button class="tab" role="tab" aria-selected="${S.tab===t.id}" data-go="${t.id}"><span class="ic">${ICON[t.id]||''}</span><span>${t.t}</span></button>`).join('');
   const v = {home:viewHome, steps:viewSteps, docs:viewDocs, links:viewLinks, topic:viewTopic, partner:viewPartner, mail:viewMail}[S.tab] || viewHome;
   $('#view').innerHTML = v();
-  $('#foot').innerHTML = `${esc(APP_NAME)} · 마지막 업데이트 ${UPDATED} · 체크와 입력은 이 기기 브라우저에만 저장돼요 · <button class="ghost" id="btnReset2" style="font-size:12px;padding:3px 9px">기록 지우기</button>`;
+  $('#foot').innerHTML = `${esc(APP_NAME)} · 업데이트 ${UPDATED} · 체크와 입력은 이 기기 브라우저에만 저장돼요 · <button class="ghost" id="btnReset2">기록 지우기</button>`;
   after();
 }
 function after(){
@@ -1518,107 +1746,124 @@ function after(){
 
 /* ---------- 🏠 처음 ---------- */
 function progress(){ let t=0,d=0; STEPS.forEach(s=>s.items.forEach((it,i)=>{t++; if(S.done[s.id+':'+i]) d++;})); return {t,d}; }
+function nextTodo(){ for(let i=0;i<STEPS.length;i++){ const st=STEPS[i]; for(let j=0;j<st.items.length;j++){ if(!S.done[st.id+':'+j]) return {i, st, it:st.items[j]}; } } return null; }
 function viewHome(){
-  const p = progress();
-  const cards = TABS.filter(t=>t.id!=='home').map(t=>{
-    const d = {steps:'8단계 체크리스트로 처음부터 끝까지', docs:'동의서·합의서·계획서 틀을 복사해서 쓰기', links:'교류 사이트, 나라 알아보기, 2022·인천형 성취기준', topic:'인천형·IB·SDG 조합 추천 + 내 주제로 지도안 틀', partner:'먼저 물어볼 것 + 나라 정보·시차 표', mail:'프로젝트 넣으면 영어·한국어 메일 완성'}[t.id];
-    return `<button data-go="${t.id}"><span class="ic">${ICON[t.id]||t.ic}</span><span class="t">${t.t}</span><span class="d">${d}</span></button>`;
-  }).join('');
+  const p = progress(); const pct = p.t?Math.round(p.d/p.t*100):0; const nx = nextTodo();
+  const desc = {steps:'8단계 체크리스트로 처음부터 끝까지', docs:'확인서·계획서는 채워서 인쇄, 나머지는 틀 복사', links:'파트너 찾는 곳, 나라 알아보기, 성취기준', topic:'인천형·IB·SDG로 프로젝트 추천과 지도안', partner:'먼저 물어볼 것, 사전 회의, 나라 정보·시차', mail:'프로젝트를 넣으면 영어·한국어 메일 완성'};
+  const tiles = TABS.filter(t=>t.id!=='home').map(t=>`<button class="tile" data-go="${t.id}"><span class="ic">${ICON[t.id]}</span><span class="t">${t.t}</span><span class="d">${desc[t.id]}</span></button>`).join('');
+  const status = p.d===0 ? '아직 시작 전이에요' : (p.d===p.t ? '모든 단계를 마쳤어요' : `${pct}% 진행했어요`);
   return `
-  <div class="hero"><span class="hero-bee">${BEE}</span><div><div class="big"><em>Globee</em>와 함께, 우리 반의 첫 국제교류</div><p>처음 해 보거나 하던 것을 정리하고 싶을 때 쓰는 길잡이예요. 차례로 보셔도 되고, 필요한 칸만 열어 보셔도 돼요.</p></div></div>
+  <section class="hero">
+    <div>
+      <p class="eb">초등 국제교류 길잡이</p>
+      <h1>처음 하는 국제교류,<br><em>Globee</em>와 차근차근</h1>
+      <p class="sub">파트너 찾기부터 동의서, 수업 설계, 메일까지 한곳에서 준비해요.</p>
+      <div class="row"><button class="btn lg" data-go="steps">순서대로 시작하기</button><button class="btn sec lg" data-go="topic">주제부터 찾기</button></div>
+    </div>
+    <div class="hero-art">${BEE}</div>
+  </section>
+  <section class="card resume">
+    <div class="resume-top">
+      <div><p class="eb">내 진행 상황</p><p class="big">${status}</p></div>
+      <button class="btn tonal sm" data-go="steps">${p.d?'이어서 하기':'1단계 보기'}${IC.arrowR}</button>
+    </div>
+    <div class="bar"><i style="width:${pct}%"></i></div>
+    ${nx?`<p class="next"><span>다음 할 일</span>${nx.i+1}단계 · ${esc(nx.it.t)}</p>`:''}
+  </section>
+  <div class="tiles">${tiles}</div>
   <section class="card">
-    <div class="home">${cards}</div>
-    <div class="prog"><span class="tx">순서 진행</span><div class="bar"><i style="width:${p.t?Math.round(p.d/p.t*100):0}%"></i></div><span class="tx">${p.d} / ${p.t}</span></div>
+    <h2>이렇게 흘러가요</h2>
+    <p class="lead">처음이라면 이 네 가지만 기억하세요.</p>
+    <ol class="phases">
+      <li><b>주제 정하기</b><span>학년군과 틀을 골라 프로젝트 하나</span></li>
+      <li><b>파트너 찾기</b><span>인천 교류 사업, British Council, Class2Class, 또는 첫 제안 메일</span></li>
+      <li><b>사전 회의·서류</b><span>두 선생님이 30분 화상 회의, 동의서와 최종 계획서</span></li>
+      <li><b>교류·돌아보기</b><span>주고받고 묻고 답한 뒤 감사 인사와 결과 정리</span></li>
+    </ol>
   </section>
   <section class="card">
-    <h2>처음이라면 이렇게</h2>
-    <ol style="margin:6px 0 0 18px;padding:0;font-size:15px">
-      <li>아래 <b>궁금한 것</b>을 한 번 훑어요. (3분)</li>
-      <li><b>주제 찾기</b>에서 학년군과 틀을 골라 프로젝트 하나를 정해요. (10분)</li>
-      <li><b>자료</b>의 파트너 찾기 사이트에 가입하거나, <b>메일 틀</b> "첫 제안"을 복사해 보내요. (British Council은 학교장 확인서가 필요해요 → 서류함에서 작성·인쇄)</li>
-      <li>답이 오면 <b>파트너교</b>로 조건을 맞추고 사전 화상 회의를 해요. <b>서류함</b>에서 동의서와 최종 계획서를 꺼내요. 그 뒤는 순서 탭을 따라가요.</li>
+    <div class="mini-h"><span class="tag p">가장 작게 시작하기</span><span class="meta">2주 · 2차시</span></div>
+    <h2>소개 영상 한 번 주고받기</h2>
+    <ol class="numlist">
+      <li>우리 반 소개 영상 1분 만들기 — 교실·급식·좋아하는 놀이, 영어 문장 3개</li>
+      <li>파트너교에 보내고, 받은 영상 보며 질문 3개 쓰기</li>
+      <li>답이 오면 함께 읽고 "다음엔 뭘 물어볼까" 이야기 나누기</li>
     </ol>
-    <div class="mini">
-      <b>가장 작게 시작하기 (2주, 2차시)</b>
-      <ol>
-        <li>우리 반 소개 영상 1분 만들기 (교실·급식·좋아하는 놀이, 영어 문장 3개)</li>
-        <li>파트너교에 보내고, 받은 영상 보며 질문 3개 쓰기</li>
-        <li>답이 오면 함께 읽고 "다음엔 뭘 물어볼까" 이야기 나누기</li>
-      </ol>
-      <span class="hint">이것만 해도 아이들에게는 "다른 나라 친구가 내 질문에 답해 줬다"는 경험이 남아요. 주제 찾기의 「우리 학교·우리 동네 소개」가 이 판이에요.</span>
-    </div>
+    <div class="callout info"><span class="ic">${IC.bulb}</span><div>이것만 해도 아이들에게는 "다른 나라 친구가 내 질문에 답해 줬다"는 경험이 남아요.<div style="margin-top:10px"><button class="link-btn" data-gopick="hello">「우리 학교·우리 동네 소개」 프로젝트 보기${IC.arrowR}</button></div></div></div>
   </section>
   <section class="card">
     <h2>처음 궁금한 것</h2>
-    <p class="lead">눌러서 펼쳐 보세요.</p>
-    ${FAQ.map(([q,a])=>`<details class="faq"><summary>${esc(q)}</summary><div>${esc(a)}</div></details>`).join('')}
+    <p class="lead" style="margin-bottom:6px">눌러서 펼쳐 보세요.</p>
+    ${FAQ.map(([q,a])=>`<details class="faq"><summary>${esc(q)}</summary><div class="a">${esc(a)}</div></details>`).join('')}
   </section>`;
 }
-
 /* ---------- 🧭 순서 ---------- */
 function viewSteps(){
   const cur = STEPS.find(s=>s.id===S.step) || STEPS[0];
-  const nav = STEPS.map((s,i)=>{ const all = s.items.every((_,j)=>S.done[s.id+':'+j]); return `<button data-step="${s.id}" aria-selected="${s.id===cur.id}" class="${all?'done':''}"><span class="n">${all?'✓':i+1}</span>${s.t}</button>`; }).join('');
+  const idx = STEPS.indexOf(cur);
+  const nav = STEPS.map((s,i)=>{ const all = s.items.every((_,j)=>S.done[s.id+':'+j]); return `<button data-step="${s.id}" aria-selected="${s.id===cur.id}" class="${all?'done':''}"><span class="n">${all?IC.check:i+1}</span>${esc(s.t)}</button>`; }).join('');
+  const doneN = cur.items.filter((_,j)=>S.done[cur.id+':'+j]).length;
   const items = cur.items.map((it,i)=>{
     const on = !!S.done[cur.id+':'+i];
-    const go = it.go ? goChip(it.go) : '';
-    return `<label class="ck ${on?'on':''}"><input type="checkbox" data-ck="${cur.id}:${i}" ${on?'checked':''}><span class="box">${on?'✓':''}</span><span><span class="t">${esc(it.t)}</span>${it.d?`<div class="d">${esc(it.d)}</div>`:''}${go}</span></label>`;
+    return `<label class="ck ${on?'on':''}"><input type="checkbox" data-ck="${cur.id}:${i}" ${on?'checked':''}><span class="box">${IC.check}</span><span class="b"><span class="t">${esc(it.t)}</span>${it.d?`<span class="d">${esc(it.d)}</span>`:''}${it.go?goChip(it.go):''}</span></label>`;
   }).join('');
-  const idx = STEPS.indexOf(cur);
-  return `
+  const prev = idx>0 ? `<button class="btn sec" data-step="${STEPS[idx-1].id}">${IC.arrowL}<span>${esc(STEPS[idx-1].t)}</span></button>` : '<span></span>';
+  const next = idx<STEPS.length-1 ? `<button class="btn" data-step="${STEPS[idx+1].id}"><span>${esc(STEPS[idx+1].t)}</span>${IC.arrowR}</button>` : `<span class="finish">${IC.check}마지막 단계예요</span>`;
+  return `${PH('순서','국제교류, 8단계로','단계마다 할 일을 체크해 두면 다음에 열었을 때 이어서 볼 수 있어요. 꼭 이 순서일 필요는 없어요.')}
+  <nav class="stepper" aria-label="단계">${nav}</nav>
   <section class="card">
-    <h2>국제교류 순서</h2>
-    <p class="lead">단계마다 할 일을 체크해 두면 다음에 열었을 때 이어서 볼 수 있어요. 순서가 꼭 이대로일 필요는 없어요.</p>
-    <div class="stepnav">${nav}</div>
-    <h3 style="font-size:17px;font-weight:800">${idx+1}단계. ${esc(cur.t)} ${cur.when?`<span class="tag sun" style="font-size:12px;vertical-align:middle">${esc(cur.when)}</span>`:''}</h3>
-    <p class="lead" style="margin-top:4px">${esc(cur.lead)}</p>
-    ${items}
-    ${cur.tips&&cur.tips.length?`<div class="tipbox"><b>작은 팁</b><ul style="margin:4px 0 0 18px;padding:0">${cur.tips.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div>`:''}
-    <div class="row between" style="margin-top:16px">
-      ${idx>0?`<button class="btn sec sm" data-step="${STEPS[idx-1].id}">← ${STEPS[idx-1].t}</button>`:'<span></span>'}
-      ${idx<STEPS.length-1?`<button class="btn sm" data-step="${STEPS[idx+1].id}">${STEPS[idx+1].t} →</button>`:'<span class="tag p">마지막 단계예요 🎉</span>'}
+    <div class="step-h">
+      <p class="eb">STEP ${idx+1}${cur.when?` · ${esc(cur.when)}`:''}</p>
+      <div class="sec-h"><h2>${esc(cur.t)}</h2><span class="count">${doneN} / ${cur.items.length}</span></div>
+      <p class="lead" style="margin-bottom:0">${esc(cur.lead)}</p>
     </div>
-  </section>`;
+    <div class="cl">${items}</div>
+    ${cur.tips&&cur.tips.length?`<div class="callout"><span class="ic">${IC.bulb}</span><div><b>작은 팁</b><ul>${cur.tips.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div></div>`:''}
+  </section>
+  <div class="pager">${prev}${next}</div>`;
 }
 function goChip(go){
   const [tab, x] = go.split(':');
   const lab = {docs:'서류함', links:'자료', topic:'주제 찾기', partner:'파트너교', mail:'메일 틀'}[tab] || tab;
   let sub=''; if(tab==='links' && x==='kids') sub=' · 아이들과 나라 알아보기'; if(tab==='docs'){ const d=DOCS.find(d=>d.id===x)||FORMS.find(f=>f.id===x); sub=d?' · '+d.t.split(' (')[0].split(' — ')[0]:''; } if(tab==='mail'){ const m=MAIL_KINDS.find(m=>m.id===x); sub=m?' · '+m.t:''; }
-  return `<button class="go" data-go="${tab}" data-extra="${x||''}">${lab}${esc(sub)} →</button>`;
+  return `<button class="go" data-go="${tab}" data-extra="${x||''}">${lab}${esc(sub)}${IC.arrowR}</button>`;
 }
-
 /* ---------- 📁 서류함 ---------- */
 function viewDocs(){
-  const list = DOCS.map(d=>`<div class="doc ${S.docReady[d.id]?'ready':''}">
-    <div class="ic">${d.ic}</div><div class="t">${esc(d.t)}</div>
-    <div class="m">🕒 ${esc(d.when)} · ✍️ ${esc(d.who)}</div><div class="m">${esc(d.m)}</div>
-    <div class="acts"><button class="btn sm" data-doc="${d.id}">틀 보기·복사</button>${d.link?`<a class="btn sec sm" href="${esc(d.link)}" target="_blank" rel="noopener">내 완성본 열기</a>`:''}<button class="ghost" data-ready="${d.id}">${S.docReady[d.id]?'✓ 준비됨':'준비됐나요?'}</button></div>
+  const formTiles = FORMS.map(f=>`<div class="dtile feat">
+    <div class="em">${TF(f.ic)}</div><div class="t">${esc(f.t)}</div>
+    <div class="meta">${esc(f.when)} · ${esc(f.who)}</div><div class="m">${esc(f.m)}</div>
+    <div class="acts"><button class="btn sm" data-form="${f.id}">작성하기${IC.arrowR}</button></div>
   </div>`).join('');
-  return `
+  const docTiles = DOCS.map(d=>`<div class="dtile ${S.docReady[d.id]?'ready':''}">
+    <div class="em">${TF(d.ic)}</div><div class="t">${esc(d.t)}</div>
+    <div class="meta">${esc(d.when)} · ${esc(d.who)}</div><div class="m">${esc(d.m)}</div>
+    <div class="acts"><button class="btn tonal sm" data-doc="${d.id}">틀 보기·복사</button>${d.link?`<a class="btn sec sm" href="${esc(d.link)}" target="_blank" rel="noopener">완성본</a>`:''}<button class="readyt ${S.docReady[d.id]?'on':''}" data-ready="${d.id}">${IC.check}${S.docReady[d.id]?'준비됨':'준비 표시'}</button></div>
+  </div>`).join('');
+  return `${PH('서류함','필요한 서류, 여기 다 있어요','확인서와 최종 계획서는 빈칸만 채우면 인쇄·Word로 받고, 나머지는 틀을 복사해 한글이나 구글 문서에 붙여 써요.')}
   <section class="card">
-    <h2>양식 채우기 → 인쇄·Word로 받기</h2>
-    <p class="lead">빈칸을 채우면 문서가 바로 만들어져요. 인쇄(PDF로 저장)하거나 Word 파일로 받아 로고·직인을 넣으면 돼요. 입력한 내용은 이 기기에만 남아요.</p>
-    <div class="doclist">${FORMS.map(f=>`<div class="doc"><div class="ic">${f.ic}</div><div class="t">${esc(f.t)}</div><div class="m">🕒 ${esc(f.when)} · ✍️ ${esc(f.who)}</div><div class="m">${esc(f.m)}</div><div class="acts"><button class="btn sm" data-form="${f.id}">작성하기</button></div></div>`).join('')}</div>
+    <div class="sec-h"><h2>양식 채우기</h2><span class="count">인쇄 · PDF · Word</span></div>
+    <p class="lead">빈칸을 채우면 문서가 바로 만들어져요. 입력한 내용은 이 기기에만 남아요.</p>
+    <div class="dgrid">${formTiles}</div>
   </section>
-  <section class="card tint-peach">
-    <h2>서류 틀 (복사해서 쓰기)</h2>
-    <p class="lead">[틀 보기·복사]로 복사해서 한글이나 구글 문서에 붙여 넣고 { } 자리를 채우면 돼요. 완성본을 드라이브에 올려 두셨으면 코드의 <code>link</code> 칸에 주소를 넣어 두세요.</p>
-    <div class="doclist">${list}</div>
-    <div class="tipbox" style="margin-top:14px"><b>꼭 기억할 것</b>
-      <ul style="margin:4px 0 0 18px;padding:0">
-        <li>아이들의 이름·사진은 이 앱에 넣지 않아요. 앱은 누구나 열 수 있는 주소예요.</li>
-        <li>학생 정보가 해외 학교로 가면 개인정보 보호법의 "국외 이전"에 해당해요. 동의서에 받는 학교 이름·나라·항목·기간이 들어가야 해요.</li>
-        <li>학교에 이미 있는 동의서 양식이 있으면 그걸 쓰고, 여기 틀로 빠진 것만 보태 주세요.</li>
-      </ul></div>
+  <section class="card">
+    <div class="sec-h"><h2>서류 틀</h2><span class="count">${DOCS.length}가지</span></div>
+    <p class="lead">복사해서 붙여 넣고 { } 자리를 채우면 돼요. 드라이브에 완성본이 있으면 코드의 <code>link</code>에 주소를 넣어 두세요.</p>
+    <div class="dgrid">${docTiles}</div>
+    <div class="callout info"><span class="ic">${IC.shield}</span><div><b>개인정보, 이것만은 꼭</b><ul>
+      <li>아이들의 이름·사진은 이 앱에 넣지 않아요. 누구나 열 수 있는 주소예요.</li>
+      <li>학생 정보가 해외 학교로 가면 개인정보 보호법의 "국외 이전"이에요. 동의서에 받는 학교·나라·항목·기간이 들어가야 해요.</li>
+      <li>학교에 쓰던 동의서 양식이 있으면 그걸 쓰고, 여기 틀로 빠진 것만 보태 주세요.</li>
+    </ul></div></div>
   </section>`;
 }
 function openDoc(id){
   const d = DOCS.find(d=>d.id===id); if(!d) return;
-  $('#modalIn').innerHTML = `<div class="row between"><h2 style="font-size:18px;font-weight:800">${d.ic} ${esc(d.t)}</h2><button class="ghost" data-close>닫기 ✕</button></div>
-    <p class="hint">🕒 ${esc(d.when)} · ✍️ ${esc(d.who)}</p>
+  $('#modalIn').innerHTML = `<div class="mh"><h2><span class="em">${TF(d.ic)}</span>${esc(d.t)}</h2><button class="iconbtn" data-close aria-label="닫기">${IC.close}</button></div>
+    <p class="mdesc">${esc(d.when)} · ${esc(d.who)}</p>
     <div class="pre" id="docText">${esc(d.tpl)}</div>
-    <div class="row" style="margin-top:12px"><button class="btn" data-copydoc="${d.id}">전체 복사</button><button class="btn sec" data-dl="${d.id}">텍스트 파일로 받기</button></div>`;
-  $('#modal').classList.add('on');
+    <div class="mf"><button class="btn" data-copydoc="${d.id}">${IC.copy}전체 복사</button><button class="btn sec" data-dl="${d.id}">${IC.down}텍스트 파일로 받기</button></div>`;
+  $('#modal').classList.add('on'); $('#modalIn').scrollTop = 0;
 }
 function closeModal(){ $('#modal').classList.remove('on'); }
 function formVals(f){ S.forms = S.forms||{}; const v = Object.assign({}, S.forms[f.id]||{}); f.fields.forEach(fd=>{ if(v[fd.k]===undefined && fd.def!==undefined) v[fd.k]=fd.def; });
@@ -1628,14 +1873,14 @@ function formVals(f){ S.forms = S.forms||{}; const v = Object.assign({}, S.forms
 function openForm(id){
   const f = FORMS.find(x=>x.id===id); if(!f) return;
   const v = formVals(f);
-  const inputs = f.fields.map(fd=>`<div${fd.type==='textarea'?' style="grid-column:1/-1"':''}><label class="f">${esc(fd.lab)}</label>${fd.type==='textarea'?`<textarea data-ff="${fd.k}" placeholder="${esc(fd.ph||'')}" style="min-height:${fd.k==='sessions'?110:60}px">${esc(v[fd.k]||'')}</textarea>`:`<input type="text" data-ff="${fd.k}" value="${esc(v[fd.k]||'')}" placeholder="${esc(fd.ph||'')}">`}</div>`).join('');
-  $('#modalIn').innerHTML = `<div class="row between"><h2 style="font-size:18px;font-weight:800">${f.ic} ${esc(f.t)}</h2><button class="ghost" data-close>닫기 ✕</button></div>
-    <p class="hint">${esc(f.m)}</p>
+  const inputs = f.fields.map(fd=>`<div${fd.type==='textarea'?' class="wide"':''}><label class="f">${esc(fd.lab)}</label>${fd.type==='textarea'?`<textarea data-ff="${fd.k}" placeholder="${esc(fd.ph||'')}" style="min-height:${fd.k==='sessions'?120:76}px">${esc(v[fd.k]||'')}</textarea>`:`<input type="text" data-ff="${fd.k}" value="${esc(v[fd.k]||'')}" placeholder="${esc(fd.ph||'')}">`}</div>`).join('');
+  $('#modalIn').innerHTML = `<div class="mh"><h2><span class="em">${TF(f.ic)}</span>${esc(f.t)}</h2><button class="iconbtn" data-close aria-label="닫기">${IC.close}</button></div>
+    <p class="mdesc">${esc(f.m)}</p>
     <div class="grid2" id="formGrid" data-formid="${f.id}">${inputs}</div>
-    <div class="row" style="margin-top:14px"><button class="btn" data-fprint="${f.id}">인쇄 / PDF로 저장</button><button class="btn sec" data-fword="${f.id}">Word 파일(.doc) 받기</button><button class="btn sec" data-ftext="${f.id}">텍스트 복사</button><button class="ghost" data-fclear="${f.id}">입력 지우기</button></div>
-    <label class="f" style="margin-top:16px">미리보기</label>
-    <div id="formPreview">${f.doc(v)}</div>`;
-  $('#modal').classList.add('on');
+    <div class="plabel"><span>미리보기</span><span class="meta">노란 칸은 아직 비어 있어요</span></div>
+    <div id="formPreview">${f.doc(v)}</div>
+    <div class="mf"><button class="btn" data-fprint="${f.id}">${IC.print}인쇄 · PDF로 저장</button><button class="btn sec" data-fword="${f.id}">${IC.word}Word로 받기</button><button class="btn sec" data-ftext="${f.id}">${IC.copy}텍스트 복사</button><span class="sp"></span><button class="ghost" data-fclear="${f.id}">${IC.trash}입력 지우기</button></div>`;
+  $('#modal').classList.add('on'); $('#modalIn').scrollTop = 0;
 }
 function formHTML(f){ const v=formVals(f); return f.doc(v); }
 const PAPER_CSS = `body{font-family:"Malgun Gothic","맑은 고딕",Pretendard,Arial,sans-serif;color:#111;font-size:12.5pt;line-height:1.7;margin:0;padding:20mm 18mm}
@@ -1649,36 +1894,31 @@ function textForm(id){ const f=FORMS.find(x=>x.id===id); const d=document.create
 
 /* ---------- 🔗 자료·성취기준 ---------- */
 function viewLinks(){
-  const sites = SITES.map(g=>`<h3 class="sec" id="sec-${g.c.includes('아이들')?'kids':''}">${esc(g.c)}</h3><div class="links">${g.list.map(l=>`<a class="lk" href="${esc(l.u)}" target="_blank" rel="noopener"><div class="t">${esc(l.t)} ↗</div><div class="d">${esc(l.d)}</div>${l.n?`<div class="n">⚠️ ${esc(l.n)}</div>`:''}</a>`).join('')}</div>`).join('');
+  const sites = SITES.map((g,gi)=>`<h3 class="sub-h"${g.c.includes('아이들')?' id="sec-kids"':''}>${esc(g.c)}</h3><div class="links">${g.list.map(l=>`<a class="lk" href="${esc(l.u)}" target="_blank" rel="noopener"><span class="t">${esc(l.t)}${IC.ext}</span><span class="d">${esc(l.d)}</span>${l.n?`<span class="n">${esc(l.n)}</span>`:''}</a>`).join('')}</div>`).join('');
   const subjects = ['','국어','영어','사회','도덕','실과','미술','음악','인천형'];
   const q = (S.stdq||'').trim();
   const codes = Object.keys(STD).filter(c=>bandOf(c)===S.band && (!S.stdSubj||subjOf(c)===S.stdSubj) && (!q || c.includes(q) || STD[c].includes(q)));
-  const rows = codes.map(c=>`<div class="stdrow"><code>${c}</code><span class="tx">${esc(STD[c])}${STD_NOTE.includes(c)?' <span class="tag sun">원문 확인</span>':''}</span><button class="ghost cp" data-copy="${esc(stdLine(c))}">복사</button></div>`).join('') || '<p class="hint">맞는 성취기준이 없어요. 검색어를 지우거나 다른 교과를 골라 보세요.</p>';
-  return `
-  <section class="card tint-sky">
-    <h2>자료 모음</h2>
-    <p class="lead">파트너 찾는 곳, 기관, 세계시민·IB 자료, 수업 도구, 행정까지. 2026-10-30에 전부 열어 확인했어요. 주소가 바뀌면 코드의 <code>SITES</code>에서 고쳐 주세요.</p>
-    ${sites}
-  </section>
+  const rows = codes.map(c=>`<div class="stdrow"><code class="${c.includes('인세')?'inc':''}">${c}</code><span class="tx">${esc(STD[c])}</span><button class="iconbtn sm" data-copy="${esc(stdLine(c))}" title="복사" aria-label="복사">${IC.copy}</button></div>`).join('') || '<p class="empty">맞는 성취기준이 없어요. 검색어를 지우거나 다른 교과를 골라 보세요.</p>';
+  return `${PH('자료·성취기준','찾는 곳, 알아보는 곳, 엮는 곳','파트너를 찾는 사이트와 기관, 아이들과 나라를 알아보는 사이트, 수업 도구, 성취기준까지. 2026년 10월에 모든 주소를 직접 열어 확인했어요.')}
+  <section class="card">${sites}</section>
   <section class="card">
-    <h2>성취기준 (국제교류에 닿는 것)</h2>
-    <p class="lead">2022 개정(교육부 고시 제2022-33호)과 <b>인천형 세계시민교육</b>(인천교육청 해설서, 코드 '인세'). 복사하면 <b>[코드] 문장</b> 모양으로 들어가요. 평가 계획에 넣기 전엔 원문으로 한 번만 확인해 주세요.</p>
-    <div class="row">
-      <div class="chips"><button class="chip" aria-pressed="${S.band==='34'}" data-band="34">3~4학년</button><button class="chip" aria-pressed="${S.band==='56'}" data-band="56">5~6학년</button></div>
-      <div class="chips">${subjects.map(s=>`<button class="chip sky" aria-pressed="${S.stdSubj===s}" data-subj="${s}">${s||'전체'}</button>`).join('')}</div>
+    <div class="sec-h"><h2>성취기준</h2><span class="count">${codes.length}개</span></div>
+    <p class="lead">2022 개정 교육과정과 <b>인천형 세계시민교육</b>(코드 '인세'). 복사하면 [코드] 문장 모양으로 들어가요.</p>
+    <div class="filters">
+      <div class="seg"><button aria-pressed="${S.band==='34'}" data-band="34">3~4학년</button><button aria-pressed="${S.band==='56'}" data-band="56">5~6학년</button></div>
+      <div class="search">${IC.search}<input type="text" id="stdq" placeholder="낱말로 찾기 (예: 문화, 질문, 매체)" value="${esc(S.stdq||'')}"></div>
     </div>
-    <input type="text" id="stdq" placeholder="낱말로 찾기 (예: 문화, 질문, 매체)" value="${esc(S.stdq||'')}" style="margin:10px 0 6px">
-    <div>${rows}</div>
-    <p class="hint">${codes.length}개 · 전체 복사: <button class="ghost" data-copyall="1">이 목록 모두 복사</button></p>
+    <div class="chips">${subjects.map(x=>`<button class="chip" aria-pressed="${S.stdSubj===x}" data-subj="${x}">${x||'전체'}</button>`).join('')}</div>
+    <div class="stdlist">${rows}</div>
+    ${codes.length?`<div class="row" style="margin-top:14px"><button class="btn sec sm" data-copyall="1">${IC.copy}이 목록 모두 복사</button></div>`:''}
   </section>`;
 }
-
 /* ---------- 💡 주제 찾기 ---------- */
 function scoreProject(p){
   const t = S.topic; let s = 0, why = [];
   if(!p.band.includes(S.band)) return {s:-1, why};
   t.ib.forEach(x=>{ if(p.ib.includes(x)) { s+=2; why.push('IB'); } });
-  (t.ic||[]).forEach(x=>{ if((p.ic||[]).includes(x)) { s+=2; why.push('인천형'); } });
+  (t.ic||[]).forEach(x=>{ if((p.inc||[]).includes(x)) { s+=2; why.push('인천형'); } });
   t.gced.forEach(x=>{ if(p.gced.includes(x)) { s+=2; why.push('세계시민'); } });
   t.sdg.forEach(x=>{ if(p.sdg.includes(x)) { s+=2; why.push('SDG'); } });
   t.subj.forEach(x=>{ if(p.subj.includes(x)) { s+=1; why.push('교과'); } });
@@ -1703,114 +1943,110 @@ function viewWeave(){
   const q = (S.weaveQ||'').trim();
   const res = q ? weave(q) : [];
   const sel = S.weaveSel || [];
-  const rows = res.map(({c,sc})=>{ const on = sel.includes(c); return `<label class="ck ${on?'on':''}" style="margin:6px 0"><input type="checkbox" data-wsel="${c}" ${on?'checked':''}><span class="box">${on?'✓':''}</span><span><span class="t" style="font-size:14px">[${c}] <span class="tag gray">${subjOf(c)}</span></span><div class="d">${esc(STD[c])}</div></span></label>`; }).join('');
+  const rows = res.map(({c})=>{ const on = sel.includes(c); return `<label class="ck ${on?'on':''}"><input type="checkbox" data-wsel="${c}" ${on?'checked':''}><span class="box">${IC.check}</span><span class="b"><span class="t"><span class="tag ${c.includes('인세')?'honey':'p'}" style="margin:0 6px 0 0">${c}</span><span class="meta">${subjOf(c)}</span></span><span class="d">${esc(STD[c])}</span></span></label>`; }).join('');
   const chosen = sel.length ? sel : res.slice(0,3).map(x=>x.c);
   const plan = q ? planText(q, chosen) : '';
-  return `<section class="card">
-    <h2>내 주제로 엮기</h2>
-    <p class="lead">하고 싶은 수업 주제를 적으면 닿는 성취기준을 찾아 주고, 그걸로 지도안 틀을 만들어 줘요. 낱말을 바꿔 가며 여러 번 눌러 보세요.</p>
-    <div class="row"><input type="text" id="weaveQ" placeholder="예: 우리 동네 음식 소개 / 쓰레기 줄이기 / 인천 자매도시" value="${esc(S.weaveQ||'')}" style="flex:1;min-width:220px"><button class="btn" id="weaveGo">성취기준 찾기</button></div>
-    <p class="hint">학년군은 위에서 고른 <b>${S.band==='34'?'3~4학년':'5~6학년'}</b> 기준이에요.</p>
-    ${q ? (res.length ? `<label class="f" style="margin-top:12px">닿는 성취기준 (지도안에 넣을 것을 체크, 안 하면 위 3개)</label>${rows}` : '<p class="hint" style="margin-top:12px">맞는 성취기준을 못 찾았어요. 더 짧은 낱말(예: 환경, 문화, 소개)로 적어 보세요.</p>') : ''}
-    ${plan ? `<label class="f" style="margin-top:14px">지도안 틀</label><textarea id="planText" style="min-height:300px;font-size:13.5px">${esc(plan)}</textarea><div class="row" style="margin-top:8px"><button class="btn" data-copyel="planText">지도안 복사</button><button class="btn sec" data-copy="${esc(chosen.map(stdLine).join('\n'))}">성취기준만 복사</button></div>` : ''}
+  return `<section class="card" style="margin-top:28px">
+    <div class="sec-h"><h2>내 주제로 엮기</h2><span class="count">${S.band==='34'?'3~4학년':'5~6학년'} 기준</span></div>
+    <p class="lead">하고 싶은 수업 주제를 적으면 닿는 성취기준을 찾고, 그걸로 지도안 틀을 만들어 줘요.</p>
+    <div class="row"><div class="search">${IC.search}<input type="text" id="weaveQ" placeholder="예: 우리 동네 음식 소개 · 쓰레기 줄이기 · 인천 자매도시" value="${esc(S.weaveQ||'')}"></div><button class="btn" id="weaveGo">찾기</button></div>
+    ${q ? (res.length ? `<div class="plabel"><span>닿는 성취기준</span><span class="meta">체크한 것만 지도안에 · 안 하면 위 3개</span></div><div class="cl">${rows}</div>` : '<p class="empty">맞는 성취기준을 못 찾았어요. 더 짧은 낱말(예: 환경, 문화, 소개)로 적어 보세요.</p>') : ''}
+    ${plan ? `<div class="plabel"><span>지도안 틀</span><span class="meta">고쳐서 써도 돼요</span></div><textarea id="planText" style="min-height:320px;font-size:14px">${esc(plan)}</textarea><div class="row" style="margin-top:12px"><button class="btn" data-copyel="planText">${IC.copy}지도안 복사</button><button class="btn sec" data-copy="${esc(chosen.map(stdLine).join('\n'))}">성취기준만 복사</button></div>` : ''}
   </section>`;
 }
 function viewTopic(){
   const t = S.topic;
-  const chips = (arr, key, cls, lab) => `<label class="f">${lab}</label><div class="chips">${arr.map(x=>`<button class="chip ${cls}" aria-pressed="${t[key].includes(x.id)}" data-tk="${key}" data-tv="${x.id}">${x.ic||''}${esc(x.t)}</button>`).join('')}</div>`;
+  const chips = (arr, key) => `<div class="chips">${arr.map(x=>`<button class="chip" aria-pressed="${t[key].includes(x.id)}" data-tk="${key}" data-tv="${x.id}">${esc(x.t)}</button>`).join('')}</div>`;
   const anySel = t.ib.length||(t.ic||[]).length||t.gced.length||t.sdg.length||t.subj.length||t.mode||t.len;
   const scored = PROJECTS.map(p=>({p, ...scoreProject(p)})).filter(x=>x.s>=0).sort((a,b)=>b.s-a.s);
   const best = anySel && scored.length ? scored[0].s : -1;
-  const list = scored.map(({p,s,why})=>`<button class="pj ${anySel&&s===best&&s>0?'best':''}" data-pick="${p.id}">
-     <div class="row"><span class="ic">${p.ic}</span>${anySel&&s>0?`<span class="score">딱 맞음 ${'★'.repeat(Math.min(3,Math.ceil(s/2)))}</span>`:''}</div>
-     <div class="t">${esc(p.t)}</div><div class="en">${esc(p.en)}</div><div class="q">“${esc(p.q)}”</div>
-     <div class="tags"><span class="tag gray">${MODES[p.mode]}</span><span class="tag gray">${LENS[p.len].split(' ')[0]}</span>${p.subj.slice(0,3).map(x=>`<span class="tag sky">${x}</span>`).join('')}</div>
+  const bestN = scored.filter(x=>x.s===best).length;
+  const list = scored.map(({p,s})=>`<button class="pj ${S.pick===p.id?'on':''}" data-pick="${p.id}">
+     <div class="top"><span class="em">${TF(p.ic)}</span>${anySel&&s>0?`<span class="badge">${s===best&&bestN<=3?IC.spark+'가장 잘 맞아요':'잘 맞아요'}</span>`:''}</div>
+     <div class="t">${esc(p.t)}</div><div class="en">${esc(p.en)}</div><div class="q">${esc(p.q)}</div>
+     <div class="tags"><span class="tag">${MODES[p.mode]}</span><span class="tag">${LENS[p.len].split(' ')[0]}</span>${p.subj.slice(0,3).map(x=>`<span class="tag p">${x}</span>`).join('')}</div>
    </button>`).join('');
   const pick = PROJECTS.find(p=>p.id===S.pick);
-  return `
-  <section class="card tint-lav">
-    <h2>주제 찾기</h2>
-    <p class="lead">학년군을 고르고, 쓰고 싶은 틀(인천형 세계시민교육 · 유네스코 세계시민교육 · IB · SDG · 교과)을 하나 이상 눌러 보세요. 조합에 가장 잘 맞는 프로젝트가 위로 올라와요. 아무것도 안 누르면 전부 보여요.</p>
-    <label class="f">학년군</label>
-    <div class="chips"><button class="chip" aria-pressed="${S.band==='34'}" data-band="34">3~4학년</button><button class="chip" aria-pressed="${S.band==='56'}" data-band="56">5~6학년</button></div>
-    ${chips(FW.ic,'ic','peach','인천형 세계시민교육 영역')}
-    ${chips(FW.gced,'gced','peach','세계시민교육(GCED, 유네스코) 영역')}
-    ${chips(FW.ib,'ib','lav','IB PYP 초학문적 주제')}
-    ${chips(FW.sdg.map(x=>({id:x.id,t:x.id+' '+x.t})),'sdg','sun','지속가능발전목표(SDG)')}
-    ${chips(FW.subj.map(x=>({id:x,t:x})),'subj','sky','교과')}
-    <div class="grid2">
-      <div><label class="f">교류 형태</label><div class="chips">${Object.entries(MODES).map(([k,v])=>`<button class="chip" aria-pressed="${t.mode===k}" data-tone="mode" data-tv="${k}">${v}</button>`).join('')}</div></div>
-      <div><label class="f">길이</label><div class="chips">${Object.entries(LENS).map(([k,v])=>`<button class="chip" aria-pressed="${t.len===k}" data-tone="len" data-tv="${k}">${v}</button>`).join('')}</div></div>
-    </div>
-    ${anySel?`<p class="hint" style="margin-top:10px"><button class="ghost" data-topicclear="1">선택 모두 지우기</button></p>`:''}
-    <div class="projs">${list || '<p class="hint">이 학년군에 맞는 프로젝트가 없어요.</p>'}</div>
+  return `${PH('주제 찾기','우리 반에 맞는 교류 주제','학년군과 쓰고 싶은 틀을 고르면 잘 맞는 프로젝트가 위로 올라와요. 고르지 않으면 전부 보여요.')}
+  <section class="card">
+    <div class="frow"><div class="fl">학년군</div><div><div class="seg"><button aria-pressed="${S.band==='34'}" data-band="34">3~4학년</button><button aria-pressed="${S.band==='56'}" data-band="56">5~6학년</button></div></div></div>
+    <div class="frow"><div class="fl">교류 형태</div><div class="chips">${Object.entries(MODES).map(([k,v])=>`<button class="chip" aria-pressed="${t.mode===k}" data-tone="mode" data-tv="${k}">${v}</button>`).join('')}</div></div>
+    <div class="frow"><div class="fl">길이</div><div class="chips">${Object.entries(LENS).map(([k,v])=>`<button class="chip" aria-pressed="${t.len===k}" data-tone="len" data-tv="${k}">${v}</button>`).join('')}</div></div>
+    <div class="frow"><div class="fl">인천형<small>세계시민교육 영역</small></div>${chips(FW.ic,'ic')}</div>
+    <div class="frow"><div class="fl">유네스코<small>세계시민교육(GCED)</small></div>${chips(FW.gced,'gced')}</div>
+    <div class="frow"><div class="fl">IB PYP<small>초학문적 주제</small></div>${chips(FW.ib,'ib')}</div>
+    <div class="frow"><div class="fl">SDG<small>지속가능발전목표</small></div>${chips(FW.sdg.map(x=>({id:x.id,t:x.id+' '+x.t})),'sdg')}</div>
+    <div class="frow"><div class="fl">교과</div>${chips(FW.subj.map(x=>({id:x,t:x})),'subj')}</div>
   </section>
+  <div class="sec-h out"><h2>추천 프로젝트<span class="count">${scored.length}</span></h2>${anySel?`<button class="ghost" data-topicclear="1">선택 지우기</button>`:''}</div>
+  <div class="projs">${list || '<p class="empty">이 학년군에 맞는 프로젝트가 없어요.</p>'}</div>
   ${pick?projectDetail(pick):''}
   ${viewWeave()}`;
 }
 function projectDetail(p){
-  const fw = [...(p.ic||[]).map(x=>`<span class="tag sun">인천형 · ${esc(FW.ic.find(f=>f.id===x).t)}</span>`), ...p.ib.map(x=>`<span class="tag lav">IB · ${esc(FW.ib.find(f=>f.id===x).t)}</span>`), ...p.gced.map(x=>`<span class="tag peach">GCED · ${esc(FW.gced.find(f=>f.id===x).t)}</span>`), ...p.sdg.map(x=>`<span class="tag sun">SDG ${x} ${esc((FW.sdg.find(f=>f.id===x)||{}).t||'')}</span>`)].join('');
-  const stds = p.std.map(c=>`<div class="stdrow"><code>${c}</code><span class="tx">${esc(STD[c]||'')}</span><button class="ghost cp" data-copy="${esc(stdLine(c))}">복사</button></div>`).join('');
+  const fw = [...(p.inc||[]).map(x=>`<span class="tag honey">인천형 · ${esc(FW.ic.find(f=>f.id===x).t)}</span>`), ...p.gced.map(x=>`<span class="tag p">GCED · ${esc(FW.gced.find(f=>f.id===x).t)}</span>`), ...p.ib.map(x=>`<span class="tag lav">IB · ${esc(FW.ib.find(f=>f.id===x).t)}</span>`), ...p.sdg.map(x=>`<span class="tag blue">SDG ${x} ${esc((FW.sdg.find(f=>f.id===x)||{}).t||'')}</span>`)].join('');
+  const stds = p.std.map(c=>`<div class="stdrow"><code class="${c.includes('인세')?'inc':''}">${c}</code><span class="tx">${esc(STD[c]||'')}</span><button class="iconbtn sm" data-copy="${esc(stdLine(c))}" title="복사" aria-label="복사">${IC.copy}</button></div>`).join('');
   const flow = p.flow.map(([a,b])=>`<li><b>${esc(a)}</b><span>${esc(b)}</span></li>`).join('');
   const summary = `${p.t} (${p.en})\n핵심 질문: ${p.q}\n목표: ${p.goalKo}\n형태: ${MODES[p.mode]} · ${LENS[p.len]}\n흐름:\n${p.flow.map(([a,b],i)=>` ${i+1}. ${a} — ${b}`).join('\n')}\n산출물: ${p.out}\n성취기준:\n${p.std.map(c=>' '+stdLine(c)).join('\n')}`;
-  return `<section class="card" id="pickCard">
-    <div class="row between"><h2>${p.ic} ${esc(p.t)} <span class="tag gray">${esc(p.en)}</span></h2><button class="ghost" data-pick="">닫기 ✕</button></div>
-    <p class="lead">“${esc(p.q)}”</p>
-    <div>${fw}</div>${p.src?`<p class="hint">출처: ${esc(p.src)}</p>`:''}
-    <div class="grid2" style="margin-top:12px">
-      <div><label class="f">흐름 (우리 반에 맞게 줄이거나 늘려요)</label><ol class="flow">${flow}</ol></div>
-      <div><label class="f">한 줄 목표</label><div class="pre" style="max-height:none">${esc(p.goalKo)}<br><span style="color:var(--sub)">to ${esc(p.goalEn)}</span></div>
-           <label class="f">산출물</label><div class="pre" style="max-height:none">${esc(p.out)}</div>
-           <label class="f">형태·길이</label><div><span class="tag gray">${MODES[p.mode]}</span><span class="tag gray">${LENS[p.len]}</span></div></div>
+  return `<section class="card" id="pickCard" style="margin-top:16px">
+    <div class="detail-h"><span class="em">${TF(p.ic)}</span><div class="tt"><h2>${esc(p.t)}</h2><p class="meta" style="margin-top:2px">${esc(p.en)} · ${MODES[p.mode]} · ${LENS[p.len]}</p></div><button class="iconbtn" data-pick="" aria-label="닫기">${IC.close}</button></div>
+    <p class="quote">${esc(p.q)}</p>
+    <div>${fw}</div>${p.src?`<p class="meta" style="margin-top:6px">출처: ${esc(p.src)}</p>`:''}
+    <div class="cols">
+      <div><div class="plabel" style="margin-top:0"><span>흐름</span><span class="meta">우리 반에 맞게 줄이거나 늘려요</span></div><ol class="flow">${flow}</ol></div>
+      <div><div class="plabel" style="margin-top:0"><span>한눈에</span></div>
+        <div class="info"><b>한 줄 목표</b>${esc(p.goalKo)}<span class="en">to ${esc(p.goalEn)}</span></div>
+        <div class="info"><b>산출물</b>${esc(p.out)}</div>
+      </div>
     </div>
-    <label class="f">닿는 성취기준</label>
-    <div>${stds}</div>
-    <div class="row" style="margin-top:14px">
-      <button class="btn peach" data-tomail="${p.id}">이 주제로 메일 틀 만들기</button>
-      <button class="btn sec" data-copy="${esc(summary)}">계획서용으로 복사</button>
+    <div class="plabel"><span>닿는 성취기준</span><span class="count">${p.std.length}개</span></div>
+    <div class="stdlist" style="margin-top:0">${stds}</div>
+    <div class="row" style="margin-top:20px">
+      <button class="btn" data-tomail="${p.id}">이 주제로 메일 쓰기${IC.arrowR}</button>
+      <button class="btn sec" data-go="docs" data-extra="final_plan">최종 계획서에 넣기</button>
+      <button class="btn sec" data-copy="${esc(summary)}">${IC.copy}요약 복사</button>
     </div>
   </section>`;
 }
-
 /* ---------- 🤝 파트너교 ---------- */
 function viewPartner(){
-  const groups = PARTNER.map(g=>`<h3 class="sec">${esc(g.c)}</h3>${g.list.map(a=>`<div class="ask"><div class="q">${esc(a.q)}</div><div class="w">${esc(a.w)}</div><div class="en"><i>“${esc(a.en)}”</i><button class="ghost" data-copy="${esc(a.en)}">복사</button></div></div>`).join('')}`).join('');
+  const groups = PARTNER.map(g=>`<h3 class="sub-h">${esc(g.c)}</h3>${g.list.map(a=>`<div class="ask"><div class="q">${esc(a.q)}</div><div class="w">${esc(a.w)}</div><div class="en"><i>${esc(a.en)}</i><button class="iconbtn sm" data-copy="${esc(a.en)}" title="복사" aria-label="복사">${IC.copy}</button></div></div>`).join('')}`).join('');
   const allQ = PARTNER.flatMap(g=>g.list.map(a=>'- '+a.en)).join('\n');
   const off = Number(S.tz)||0;
   const ci = COUNTRIES.find(c=>c[1]===off && (S.tzName? c[0]===S.tzName : true)) || COUNTRIES.find(c=>c[1]===off) || COUNTRIES[0];
   const hours = [9,10,11,12,13,14,15];
   let okCount = 0;
-  const tzRows = hours.map(h=>{ let ph = h+off; let day=''; if(ph>=24){ph-=24; day=' (+1일)';} if(ph<0){ph+=24; day=' (−1일)';} const ok = ph>=8 && ph<=16; if(ok) okCount++; const lab = Number.isInteger(ph) ? String(ph).padStart(2,'0')+':00' : String(Math.floor(ph)).padStart(2,'0')+':'+String(Math.round((ph%1)*60)).padStart(2,'0'); return `<tr><td>${h}:00</td><td class="${ok?'ok':'no'}">${lab}${day}${ok?' ✓':''}</td></tr>`; }).join('');
-  const tzNote = okCount ? `<p class="hint">겹치는 시간이 ${okCount}칸 있어요. 실시간 만남은 이 시간대에, 나머지는 비동기로 하면 돼요.</p>` : `<p class="hint">겹치는 수업 시간이 없어요. 이럴 땐 영상·글을 주고받는 비동기 교류가 답이에요. 꼭 실시간으로 만나고 싶다면 한쪽이 방과 후나 아침 시간을 내야 해요.</p>`;
-  return `
-  <section class="card tint-sun">
-    <h2>파트너교와 매칭됐을 때</h2>
-    <p class="lead">먼저 알아 두면 좋은 것들이에요. 영어 문장은 그대로 복사해 메일에 붙여도 돼요.</p>
-    <p><button class="btn sec sm" data-copy="${esc(allQ)}">질문 전부 복사 (영어)</button></p>
-    ${groups}
+  const cells = hours.map(h=>{ let ph = h+off; let day=''; if(ph>=24){ph-=24; day='+1일';} if(ph<0){ph+=24; day='−1일';} const ok = ph>=8 && ph<=16; if(ok) okCount++; const lab = Number.isInteger(ph) ? String(ph).padStart(2,'0')+':00' : String(Math.floor(ph)).padStart(2,'0')+':'+String(Math.round((ph%1)*60)).padStart(2,'0'); return {h, lab, day, ok}; });
+  const tz = `<div class="tzg"><div class="tzl">한국</div>${cells.map(c=>`<div class="tzc k">${c.h}:00</div>`).join('')}<div class="tzl" title="${esc(ci[0])}">${esc(ci[0])}</div>${cells.map(c=>`<div class="tzc ${c.ok?'ok':''}">${c.lab}${c.day?`<small>${c.day}</small>`:''}</div>`).join('')}</div>`;
+  const tzNote = okCount ? `서로 수업 중인 시간이 ${okCount}칸 겹쳐요. 실시간 만남은 초록 칸에, 나머지는 비동기로 하면 돼요.` : `겹치는 수업 시간이 없어요. 영상·글을 주고받는 비동기 교류가 답이에요. 꼭 만나고 싶다면 한쪽이 방과 후나 아침 시간을 내야 해요.`;
+  return `${PH('파트너교','매칭됐다면, 이것부터','먼저 물어볼 것, 두 선생님의 사전 화상 회의, 그리고 파트너 나라의 기본 정보와 시차까지.')}
+  <section class="card">
+    <div class="sec-h"><h2>파트너 나라 한눈에</h2></div>
+    <p class="lead">나라를 고르면 수도·언어·화폐·인사말과 시차가 나와요. 서머타임은 반영하지 않아 날짜에 따라 1시간 다를 수 있어요.</p>
+    <select id="tzsel" aria-label="나라">${COUNTRIES.map((c,i)=>`<option value="${i}" ${c[0]===ci[0]?'selected':''}>${esc(c[0])}  ·  한국 ${c[1]>=0?'+':''}${c[1]}시간</option>`).join('')}</select>
+    <div class="cinfo"><div><b>수도</b><span>${esc(ci[2])}</span></div><div><b>언어</b><span>${esc(ci[3])}</span></div><div><b>화폐</b><span>${esc(ci[4])}</span></div><div><b>인사말</b><span>${esc(ci[5])}</span></div></div>
+    ${ci[6]?`<p class="cnote">${esc(ci[6])}</p>`:''}
+    ${tz}
+    <p class="tzmsg">${tzNote}</p>
+    <div class="row" style="margin-top:14px"><button class="btn sec sm" data-copy="${esc(`${ci[0]} — 수도 ${ci[2]} · 언어 ${ci[3]} · 화폐 ${ci[4]} · 인사말 ${ci[5]} · 한국과 시차 ${ci[1]>=0?'+':''}${ci[1]}시간`)}">${IC.copy}나라 정보 복사</button><a class="btn sec sm" href="https://www.timeanddate.com/worldclock/meeting.html" target="_blank" rel="noopener">정확한 시간 확인${IC.ext}</a></div>
   </section>
   <section class="card">
-    <h2>사전 화상 회의, 이렇게</h2>
-    <p class="lead">매칭이 되면 학생들보다 먼저 두 선생님이 30분쯤 화상으로 만나요. 이 한 번으로 교류의 절반이 정해져요.</p>
-    <div class="grid2">
-      <div><label class="f">회의 전</label><ul class="tight"><li>날짜·시간을 두 시간대로 적어 달력에</li><li>오늘 정할 것 3가지: 무엇을·언제·어떻게</li><li>순서표를 미리 보내 두기</li></ul></div>
-      <div><label class="f">회의 중 (30분)</label><ul class="tight"><li>인사 5분 → 소개 5분 → 관심사·기대 10분 → 합의·일정 8분 → 마무리 2분</li><li>5분 먼저 들어가 연결 확인</li><li>상대 학교의 방학·시험, 허용 플랫폼, 개인정보 규정 묻기</li></ul></div>
-      <div><label class="f">회의 후</label><ul class="tight"><li>당일에 합의 메모를 메일로</li><li>다음 회의 날짜 정하기</li><li>문제가 생기면 바로 알리기</li></ul></div>
-      <div><label class="f">꼭 정하고 나올 것</label><ul class="tight"><li>프로젝트와 차시 수</li><li>시작·끝 날짜, 주고받는 주기</li><li>플랫폼과 개인정보 규칙</li><li>실시간 만남 날짜(있다면)와 연락 담당</li></ul></div>
+    <div class="sec-h"><h2>사전 화상 회의</h2><span class="count">두 선생님 · 30분</span></div>
+    <p class="lead">학생들보다 먼저 두 선생님이 화상으로 만나요. 이 한 번으로 교류의 절반이 정해져요.</p>
+    <div class="mtiles">
+      <div class="mt"><h4><span class="n">1</span>회의 전</h4><ul><li>날짜·시간을 두 시간대로 적어 달력에</li><li>오늘 정할 것 3가지: 무엇을·언제·어떻게</li><li>순서표를 미리 보내 두기</li></ul></div>
+      <div class="mt"><h4><span class="n">2</span>회의 중</h4><ul><li>인사 5 · 소개 5 · 관심사 10 · 합의 8 · 마무리 2분</li><li>5분 먼저 들어가 연결 확인</li><li>방학·시험, 허용 플랫폼, 개인정보 규정 묻기</li></ul></div>
+      <div class="mt"><h4><span class="n">3</span>회의 후</h4><ul><li>당일에 합의 메모를 메일로</li><li>다음 회의 날짜 정하기</li><li>문제가 생기면 바로 알리기</li></ul></div>
+      <div class="mt"><h4><span class="n">✓</span>꼭 정하고 나올 것</h4><ul><li>프로젝트와 차시 수</li><li>시작·끝 날짜, 주고받는 주기</li><li>플랫폼과 개인정보 규칙, 연락 담당</li></ul></div>
     </div>
-    <div class="row" style="margin-top:12px"><button class="btn sec sm" data-go="docs" data-extra="premeet">한·영 대본과 합의 메모 틀 보기</button></div>
+    <div class="row" style="margin-top:16px"><button class="btn tonal" data-go="docs" data-extra="premeet">한·영 대본과 합의 메모 틀 보기${IC.arrowR}</button></div>
   </section>
   <section class="card">
-    <h2>파트너교 나라 한눈에</h2>
-    <p class="lead">나라를 고르면 수도·언어·화폐·인사말과 시차 표가 나와요. 아이들에게 먼저 보여 주기 좋아요. 서머타임은 반영하지 않았으니 날짜에 따라 1시간 차이가 날 수 있어요.</p>
-    <select id="tzsel">${COUNTRIES.map((c,i)=>`<option value="${i}" ${c[0]===ci[0]?'selected':''}>${esc(c[0])} (한국 ${c[1]>=0?'+':''}${c[1]}시간)</option>`).join('')}</select>
-    <div class="cinfo"><div><b>수도</b>${esc(ci[2])}</div><div><b>언어</b>${esc(ci[3])}</div><div><b>화폐</b>${esc(ci[4])}</div><div><b>인사말</b>${esc(ci[5])}</div>${ci[6]?`<div class="wide"><b>참고</b>${esc(ci[6])}</div>`:''}</div>
-    <div class="row" style="margin-top:8px"><button class="ghost" data-copy="${esc(`${ci[0]} — 수도 ${ci[2]} · 언어 ${ci[3]} · 화폐 ${ci[4]} · 인사말 ${ci[5]} · 한국과 시차 ${ci[1]>=0?'+':''}${ci[1]}시간`)}">나라 정보 복사</button></div>
-    <table class="tz"><tr><th>한국(인천) 시간</th><th>파트너교 시간</th></tr>${tzRows}</table>${tzNote}
-    <p class="hint">정확한 시간은 <a href="https://www.timeanddate.com/worldclock/meeting.html" target="_blank" rel="noopener">timeanddate 회의 시간 찾기</a>에서 두 도시를 넣어 확인해 보세요.</p>
+    <div class="sec-h"><h2>먼저 물어볼 것</h2><button class="ghost" data-copy="${esc(allQ)}">${IC.copy}영어 질문 전부 복사</button></div>
+    <p class="lead">영어 문장은 그대로 복사해 메일에 붙여도 돼요.</p>
+    ${groups}
   </section>`;
 }
-
 /* ---------- ✉️ 메일 틀 ---------- */
 function mailFill(txt){
   const f = S.mail.f, p = PROJECTS.find(x=>x.id===S.pick);
@@ -1837,33 +2073,38 @@ function viewMail(){
   const inp = (key, lab, ph) => `<div><label class="f">${lab}</label><input type="text" data-mf="${key}" value="${esc(f[key]||'')}" placeholder="${esc(ph||'')}"></div>`;
   const needs = (k.en.match(/\{(\w+)\}/g)||[]).map(s=>s.slice(1,-1));
   const extra = [['where','알게 된 곳','예: ePals / a colleague'],['date','날짜','예: March 12'],['link','링크','패들렛 주소'],['ktime','한국 시간','예: 10:00'],['ptime','그쪽 시간','예: 18:00 (previous day)'],['ttime','테스트 시간','예: 10:00'],['memory','아이들이 기억하는 것','예: the song you taught us'],['reason','늦은 사정','예: a school festival']].filter(([key])=>needs.includes(key));
-  const phrases = PHRASES.map(g=>`<h3 class="sec">${esc(g.c)}</h3>${g.list.map(([en,ko])=>`<div class="phr"><span class="en">${esc(en)}</span><span class="ko">${esc(ko)}</span><button class="ghost" data-copy="${esc(en)}">복사</button></div>`).join('')}`).join('');
-  return `
-  <section class="card tint-peach">
-    <h2>메일·쪽지 틀</h2>
-    <p class="lead">종류를 고르고 빈칸을 채우면 아래 글이 바로 바뀌어요. 안 채운 칸은 [ ] 또는 { }로 남으니 보내기 전에 꼭 지워 주세요. ${p?`지금 고른 주제: <b>${p.ic} ${esc(p.t)}</b>`:'<b>주제 찾기</b>에서 프로젝트를 고르면 제목과 목표가 저절로 들어가요.'}</p>
-    <div class="mailkinds">${MAIL_KINDS.map(m=>`<button class="chip peach" aria-pressed="${m.id===k.id}" data-mk="${m.id}">${esc(m.t)}</button>`).join('')}</div>
-    <div class="chips"><button class="chip" aria-pressed="${lang==='en'}" data-ml="en">영어</button><button class="chip" aria-pressed="${lang==='ko'}" data-ml="ko">한국어</button></div>
-    <div class="grid2" style="margin-top:6px">
+  const phrases = PHRASES.map(g=>`<h3 class="sub-h">${esc(g.c)}</h3>${g.list.map(([en,ko])=>`<div class="phr"><span class="en">${esc(en)}</span><span class="ko">${esc(ko)}</span><button class="iconbtn sm" data-copy="${esc(en)}" title="복사" aria-label="복사">${IC.copy}</button></div>`).join('')}`).join('');
+  return `${PH('메일 틀','메일은 이제 복사만 하세요','상황을 고르고 빈칸을 채우면 영어·한국어 메일이 바로 만들어져요. 남은 [ ] 칸은 보내기 전에 꼭 지워 주세요.')}
+  <section class="card">
+    <div class="chips">${MAIL_KINDS.map(m=>`<button class="chip" aria-pressed="${m.id===k.id}" data-mk="${m.id}">${esc(m.t)}</button>`).join('')}</div>
+    <div class="mailbar">
+      <div class="seg"><button aria-pressed="${lang==='en'}" data-ml="en">영어</button><button aria-pressed="${lang==='ko'}" data-ml="ko">한국어</button></div>
+      ${p?`<span class="pickinfo">${TF(p.ic)}<span>주제</span><b>${esc(p.t)}</b></span>`:`<button class="link-btn" data-go="topic">주제를 고르면 제목·목표가 저절로 들어가요${IC.arrowR}</button>`}
+    </div>
+  </section>
+  <section class="card">
+    <div class="sec-h"><h2>빈칸 채우기</h2><span class="count">채운 만큼 아래 글이 바뀌어요</span></div>
+    <div class="grid2" style="margin-top:16px">
       ${inp('name','내 이름 (영문)','예: Yejin Lee')}
-      ${inp('school','학교 (영문)','예: Incheon Singeomdan Elementary School')}
+      ${inp('school','학교 (영문)','예: Incheon ○○ Elementary School')}
       ${inp('grade','학년','예: 6')}
       ${inp('n','학생 수','예: 25')}
       ${inp('email','내 이메일','교육청 계정 추천')}
-      ${inp('partner','파트너 선생님 이름','예: Ms. Garcia')}
+      ${inp('partner','파트너 선생님','예: Ms. Garcia')}
       ${inp('project','프로젝트 제목','비우면 고른 주제가 들어가요')}
-      ${inp('goal','목표 한 줄','비우면 고른 주제의 목표가 들어가요')}
+      ${inp('goal','목표 한 줄','비우면 고른 주제의 목표')}
       ${inp('period','기간','예: March to May 2027')}
       ${inp('platform','플랫폼','예: Padlet')}
       ${extra.map(([key,lab,ph])=>inp(key,lab,ph)).join('')}
     </div>
   </section>
-  <section class="card">
+  <section class="card letter">
+    <div class="sec-h"><h2>${esc(k.t)}</h2><span class="count">${lang==='en'?'English':'한국어'}</span></div>
     <label class="f">제목</label>
-    <div class="row"><input type="text" id="mailSubj" value="${esc(subj)}" readonly style="flex:1"><button class="ghost" data-copy="${esc(subj)}">복사</button></div>
-    <label class="f">본문 (고쳐도 돼요)</label>
-    <div class="out"><textarea id="mailBody">${esc(body)}</textarea></div>
-    <div class="row" style="margin-top:10px"><button class="btn" id="copyMail">본문 복사</button><button class="btn sec" id="copyMailAll">제목+본문 복사</button></div>
+    <div class="row" style="flex-wrap:nowrap"><input type="text" id="mailSubj" value="${esc(subj)}" readonly><button class="iconbtn" data-copy="${esc(subj)}" title="제목 복사" aria-label="제목 복사">${IC.copy}</button></div>
+    <label class="f">본문 <span class="meta">고쳐도 돼요</span></label>
+    <textarea id="mailBody">${esc(body)}</textarea>
+    <div class="row" style="margin-top:14px"><button class="btn" id="copyMail">${IC.copy}본문 복사</button><button class="btn sec" id="copyMailAll">제목까지 복사</button></div>
   </section>
   <section class="card">
     <h2>자주 쓰는 표현</h2>
@@ -1871,10 +2112,10 @@ function viewMail(){
     ${phrases}
   </section>`;
 }
-
 /* ---------- 이벤트 ---------- */
 document.addEventListener('click', e=>{
   const b = e.target.closest('button,a'); if(!b) return;
+  if(b.dataset.gopick){ S.pick=b.dataset.gopick; S.tab='topic'; save(); render(); setTimeout(()=>{ const el=$('#pickCard'); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); },60); return; }
   if(b.dataset.go){ go(b.dataset.go, b.dataset.extra); return; }
   if(b.dataset.step){ S.step=b.dataset.step; save(); render(); return; }
   if(b.dataset.doc){ openDoc(b.dataset.doc); return; }
